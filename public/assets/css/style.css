@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #0874ab;
+    text-align: center;
+    background-color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,h2 {
+	color:#0874ab;
+}
+
+.imageflottante
+{
+    float: left;
+}
+p {
+	color:#00874ab;
+}
+
+.bg-dark {
+    background-color: #0874ab!important;
+}
+
+.logoKarine {
+    background-image: url(data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%…4,96.229l-1.614-4.183l-1.614,4.183H23.044 z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E);
+    background-repeat: no-repeat;
+}
+
+.logoHeader {
+    padding-left: 15vh !important;
+    background-size: contain;
+}
+
+.btn {
+	color:#0874ab;
+}
+}
+

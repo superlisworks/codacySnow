@@ -1,0 +1,784 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tr",
+				"tricks"
+			],
+			[
+				"ht",
+				"htmlMessage"
+			],
+			[
+				"dat",
+				"data"
+			],
+			[
+				"che",
+				"checkBoolean"
+			],
+			[
+				"us",
+				"userModel"
+			],
+			[
+				"is_n",
+				"is_null"
+			],
+			[
+				"esc",
+				"esc_html"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"updat",
+				"updatePost"
+			],
+			[
+				"save",
+				"savePost"
+			],
+			[
+				"sa",
+				"safePost"
+			],
+			[
+				"sess",
+				"_SESSION"
+			],
+			[
+				"in",
+				"intval"
+			],
+			[
+				"ne",
+				"nextId"
+			],
+			[
+				"pos",
+				"post"
+			],
+			[
+				"sat",
+				"static"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"con",
+				"container"
+			],
+			[
+				"list",
+				"listPosts"
+			],
+			[
+				"ar",
+				"article"
+			],
+			[
+				"main",
+				"mainPage"
+			],
+			[
+				"i",
+				"information"
+			],
+			[
+				"add",
+				"addSecurity"
+			],
+			[
+				"c",
+				"change"
+			],
+			[
+				"ad",
+				"addSecurity"
+			],
+			[
+				"_",
+				"_POST"
+			],
+			[
+				"a",
+				"args"
+			],
+			[
+				"u",
+				"url"
+			],
+			[
+				"pages",
+				"possiblePages"
+			],
+			[
+				"poss",
+				"possiblePages"
+			],
+			[
+				"uns",
+				"unset"
+			],
+			[
+				"th",
+				"this"
+			],
+			[
+				"rou",
+				"route"
+			],
+			[
+				"gett",
+				"gettype"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"sho",
+				"showLoginPage"
+			],
+			[
+				"Fron",
+				"FrontView"
+			],
+			[
+				"sec",
+				"securePage"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"Front",
+				"FrontPage"
+			],
+			[
+				"arra",
+				"array"
+			],
+			[
+				"vi",
+				"viewClass"
+			],
+			[
+				"fr",
+				"front"
+			],
+			[
+				"v",
+				"views"
+			],
+			[
+				"stat",
+				"static"
+			],
+			[
+				"secu",
+				"secureInputXSS"
+			],
+			[
+				"arr",
+				"array"
+			],
+			[
+				"pa",
+				"page"
+			],
+			[
+				"exp",
+				"expirationTokenEncode"
+			],
+			[
+				"to",
+				"token"
+			],
+			[
+				"admi",
+				"adminPage"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"pri",
+				"private"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"mode",
+				"models"
+			],
+			[
+				"action",
+				"actions"
+			],
+			[
+				"ac",
+				"actions"
+			],
+			[
+				"actio",
+				"action"
+			],
+			[
+				"id",
+				"idArticle"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "templates/blog/index.html.twig",
+			"settings":
+			{
+				"buffer_size": 132,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Controller/BlogController.php",
+			"settings":
+			{
+				"buffer_size": 673,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/base.html.twig",
+			"settings":
+			{
+				"buffer_size": 1270,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/blog/home.html.twig",
+			"settings":
+			{
+				"buffer_size": 2836,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "templates/blog/show.html.twig",
+			"settings":
+			{
+				"buffer_size": 2323,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": ".env",
+			"settings":
+			{
+				"buffer_size": 1214,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "*/ formulaire de recherche*/\n <form class=\"form-inline my-2 my-lg-0\">\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>\n    </form>\n\n    <div class=\"content\">\n\t\t<img src=\"http://placehold.it/350x150\" alt=\"\">\n\t\t<p class=\"text-primary\">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>\n\t\t<h2> \n\n\t\tpublic function home() {\n    \t$tricks = \"\";\n    \t// recupere 10 elements \n\n    \t//en fonction du retour iterer une classe en lui passant des parametres\n    \treturn $this->render('blog/home.html.twig', [\n    \t\t'tricks' => $tricks\n    \t]);\n\n\n    \t<div class=\"btn-group\" role=\"group\" aria-label=\"Button group with nested dropdown\">\n <!--  <!-- <button type=\"button\" class=\"btn btn-primary\">Nom de la figure</button> -->\n  <div class=\"btn-group\" role=\"group\">\n    <button id=\"btnGroupDrop1\" type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Suite..</button>\n    <div class=\"dropdown-menu\" aria-labelledby=\"btnGroupDrop1\" x-placement=\"bottom-start\" style=\"position: absolute; transform: translate3d(0px, 36px, 0px); top: 0px; left: 0px; will-change: transform;\">\n      <a class=\"dropdown-item\" href=\"{{ path('blog_show') }}\">Voir la doc</a>\n      <a class=\"dropdown-item\" href=\"#\">Modifier</a>\n      <a class=\"dropdown-item\" href=\"#\">Supprimer</a>\n    </div>\n  </div> -->\n</div>\n\n<div class=\"btn-group\" role=\"group\" aria-label=\"Button group with nested dropdown\">\n  <!-- <button type=\"button\" class=\"btn btn-primary\">Nom de la figure</button> -->\n  <div class=\"btn-group\" role=\"group\">\n    <button id=\"btnGroupDrop1\" type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Suite..</button>\n    <div class=\"dropdown-menu\" aria-labelledby=\"btnGroupDrop1\" x-placement=\"bottom-start\" style=\"position: absolute; transform: translate3d(0px, 36px, 0px); top: 0px; left: 0px; will-change: transform;\">\n      <a class=\"dropdown-item\" href=\"{{ path('blog_show') }}\">Voir la doc</a>\n      <a class=\"dropdown-item\" href=\"#\">Modifier</a>\n      <a class=\"dropdown-item\" href=\"#\">Supprimer</a>\n    </div>\n  </div>\n</div>",
+			"settings":
+			{
+				"buffer_size": 2247,
+				"line_ending": "Windows",
+				"name": "*/ formulaire de recherche*/"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/projets/snowBoard",
+		"/D/projets/snowBoard/assets",
+		"/D/projets/snowBoard/assets/img",
+		"/D/projets/snowBoard/src",
+		"/D/projets/snowBoard/src/Controller",
+		"/D/projets/snowBoard/templates",
+		"/D/projets/snowBoard/templates/blog",
+		"/D/projets/snowBoard/vendor"
+	],
+	"file_history":
+	[
+		"/D/projets/snowBoard/assets/css/style.css",
+		"/D/serveur/www/snowBoard/add_vhost.php",
+		"/D/serveur/www/demo/.env",
+		"/D/serveur/www/demo/templates/blog/show.html.twig",
+		"/D/serveur/www/demo/templates/blog/base.html.twig",
+		"/D/serveur/www/demo/templates/blog/home.html.twig",
+		"/D/serveur/www/demo/src/Controller/BlogController.php",
+		"/D/serveur/www/demo/templates/base.html.twig",
+		"/D/serveur/www/demo/templates/blog/index.html.twig",
+		"/D/serveur/bin/php/php7.2.10/php.ini-production",
+		"/D/serveur/bin/php/php7.2.10/php.ini-development",
+		"/D/serveur/bin/php/php7.2.10/php.ini",
+		"/D/serveurLocal/www/Karine/controllers/adminPage.php",
+		"/D/serveurLocal/www/Karine/models/article.php",
+		"/D/serveurLocal/www/Karine/controllers/frontPage.php",
+		"/D/serveurLocal/www/Karine/views/front/accueil.html",
+		"/D/serveurLocal/www/Karine/models/blog.php",
+		"/D/serveurLocal/www/Karine/controllers/email.php",
+		"/Z/sql.txt",
+		"/D/serveurLocal/www/Karine/views/render.php",
+		"/D/serveurLocal/www/Karine/views/admin/fragment-listComment.html",
+		"/D/serveurLocal/www/Karine/models/users.php",
+		"/D/serveurLocal/www/Karine/controllers/mainController.php",
+		"/C/Users/karin/Documents/P5/site/admin/adminFunctions.php",
+		"/D/serveurLocal/www/Karine/index.php",
+		"/D/serveurLocal/www/Karine/models/mainModel.php",
+		"/D/serveurLocal/www/Karine/todo.txt",
+		"/D/serveurLocal/www/Karine/views/admin/template.html",
+		"/D/serveurLocal/www/Karine/models/login.php",
+		"/D/serveurLocal/www/Karine/views/admin/usersList.html",
+		"/C/Users/karin/Documents/P5/site/functions/email.php",
+		"/D/serveurLocal/www/Karine/assets/css/styles.css",
+		"/D/serveurLocal/www/Karine/assets/css/clean-blog.css",
+		"/D/serveurLocal/www/Karine/views/front/fragment-newComment.html",
+		"/D/serveurLocal/www/Karine/vendor/theme/mail/contact_me.php",
+		"/D/serveurLocal/www/Karine/views/admin/editPost.html",
+		"/D/serveurLocal/www/Karine/views/front/template.html",
+		"/D/serveurLocal/www/Karine/views/admin/login.html",
+		"/D/serveurLocal/www/Karine/views/adminView.php",
+		"/D/serveurLocal/www/Karine/controllers/routesController.php",
+		"/D/serveurLocal/www/Karine/views/commonView.php",
+		"/D/serveurLocal/www/Karine/views/frontView.php",
+		"/D/serveurLocal/www/Karine/admin/adminFunctions.php",
+		"/D/serveurLocal/www/Karine/views/front/fragment-msgError.html",
+		"/C/Users/karin/Documents/P5/site/post.php",
+		"/D/serveurLocal/www/Karine/vendor/BKcore/NoCSRF.php",
+		"/D/serveurLocal/www/Karine/views/front/article.html",
+		"/D/serveurLocal/www/Karine - avant merge theme/controllers/page.php",
+		"/D/serveurLocal/www/Karine - avant merge theme/controllers/formulaire.php",
+		"/D/serveurLocal/www/Karine/views/adminLogin.html",
+		"/D/serveurLocal/www/Karine/models/connect.php",
+		"/D/serveurLocal/www/Karine/admin/index.php",
+		"/D/serveurLocal/www/Karine/views/adminlogin.html",
+		"/D/serveurLocal/www/Karine/config.php",
+		"/D/serveurLocal/www/Karine/.env",
+		"/D/serveurLocal/www/Karine/views/main.html",
+		"/D/serveurLocal/www/Karine/views/login.html",
+		"/D/serveurLocal/www/Karine/views/fragments/listPost.html",
+		"/D/serveurLocal/www/Karine/admin/controllers/Login.php",
+		"/D/serveurLocal/www/Karine/admin/controllers/WelcomePage.php",
+		"/D/serveurLocal/www/Karine/admin/controllers/Post.php",
+		"/D/serveurLocal/www/Karine/admin/controllers/Comment.php",
+		"/D/serveurLocal/www/test/index.php",
+		"/D/serveurLocal/www/test/indexView.php",
+		"/D/serveurLocal/www/test/model.php",
+		"/D/serveurLocal/www/test/post.php",
+		"/D/serveurLocal/www/test/postView.php",
+		"/D/serveurLocal/www/test/header.php",
+		"/D/serveurLocal/www/test/footer.php",
+		"/D/serveurLocal/www/test/gabarit.php",
+		"/D/serveurLocal/www/test/controller.php",
+		"/D/serveurLocal/www/test/model/PostManager.php",
+		"/D/serveurLocal/www/test/model/CommentManager.php",
+		"/D/serveurLocal/www/Karine/controllers/page.php",
+		"/D/serveurLocal/www/Karine/views/gabarit.html",
+		"/D/serveurLocal/www/Karine/views/noCacheMeta.html",
+		"/D/serveurLocal/www/Karine/vendor/BKcore/no.php",
+		"/D/serveurLocal/www/Karine/.gitignore",
+		"/C/Users/karin/Documents/P5/site/README.md",
+		"/D/serveurLocal/www/Karine/controllers/formulaire.php",
+		"/C/Users/karin/Documents/P5/site/functions/dbAccess.php",
+		"/C/Users/karin/Documents/P5/site/index.php",
+		"/D/serveurLocal/www/Karine/vues/accueil.html",
+		"/C/Users/karin/Documents/P5/site/css/clean-blog.css",
+		"/C/Users/karin/Documents/P5/site/contact.php",
+		"/C/Users/karin/Documents/P5/site/fragments/footer.html",
+		"/C/Users/karin/Documents/P5/site/fragments/head.html",
+		"/C/Users/karin/Documents/P5/site/fragments/nav.html",
+		"/C/Users/karin/Documents/P5/site/blog.php",
+		"/C/Users/karin/Documents/P5/site/fragments/contactForm.html",
+		"/C/Users/karin/Documents/P5/site/fragments/templateMail.html",
+		"/D/serveurLocal/www/Karine/README.md",
+		"/C/Users/karin/Desktop/startbootstrap-clean-blog-gh-pages/mail/contact_me.php",
+		"/D/serveurLocal/www/Karine/vendor/theme/js/clean-blog.min.js",
+		"/C/Users/karin/Documents/P5/site/functions/tools.php",
+		"/C/Users/karin/Documents/P5/site/about.php",
+		"/D/serveurLocal/www/Karine/models/modele.php",
+		"/D/serveurLocal/www/Karine/vueAccueil.php",
+		"/C/Users/karin/Documents/P5/site/admin/pages/fragments/editPost.html"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "templates/blog/index.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								115,
+								115
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Controller/BlogController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 673,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								408,
+								408
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "templates/base.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1127,
+								1127
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "templates/blog/home.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2836,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								99,
+								99
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "templates/blog/show.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2323,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2308,
+								2308
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 346.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": ".env",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1214,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								851,
+								851
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2247,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2247,
+								2247
+							]
+						],
+						"settings":
+						{
+							"auto_name": "*/ formulaire de recherche*/",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 418.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "snowboard.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 306.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
