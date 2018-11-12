@@ -30,11 +30,5 @@ class BlogController extends AbstractController
     	return $this->render('blog/show.html.twig');
     }
     
-    /**
-     * @Route("/blog", name="blog_create")
-     */
     
-    public function create() {
-        return $this->render('blog/create.html.twig');
-    }
 }

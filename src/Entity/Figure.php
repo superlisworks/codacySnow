@@ -34,10 +34,10 @@ class Figure
     private $createDate;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Group", inversedBy="figures")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="figures")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $group;
+    private $category;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="idFigure")
@@ -90,14 +90,14 @@ class Figure
         return $this;
     }
 
-    public function getGroup(): ?Group
+    public function getCategory(): ?Category
     {
-        return $this->group;
+        return $this->category;
     }
 
-    public function setGroup(?Group $group): self
+    public function setCategory(?Category $category): self
     {
-        $this->group = $group;
+        $this->group = $category;
 
         return $this;
     }

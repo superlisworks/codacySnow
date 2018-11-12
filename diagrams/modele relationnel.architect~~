@@ -16,7 +16,7 @@
     <column id="COL2" populated="true" UUID="c8f4be57-069f-4323-99cb-dee8b0ce9e97" autoIncrement="false" autoIncrementSequenceName="Figure_idFigure_seq" defaultValue="" name="idFigure" nullable="0" physicalName="idFigure" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL3" populated="true" UUID="462ba900-d041-4aaa-b07e-839f19da6778" autoIncrement="false" autoIncrementSequenceName="Figure_idGroup_seq" defaultValue="" name="idGroup" nullable="0" physicalName="idGroup" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL3" populated="true" UUID="462ba900-d041-4aaa-b07e-839f19da6778" autoIncrement="false" autoIncrementSequenceName="Figure_idGroup_seq" defaultValue="" name="idCategory" nullable="0" physicalName="idCategory" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL4" populated="true" UUID="80aa22b6-ede2-4576-9ac8-910ca94be470" autoIncrement="false" autoIncrementSequenceName="snowTricksFigure_author_seq" defaultValue="" name="idUser" nullable="0" physicalName="idUser" precision="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
@@ -118,16 +118,16 @@
     </index>
    </folder>
   </table>
-  <table id="TAB32" populated="true" UUID="a02912b8-d163-48a1-a53a-60a16aedcc8c" name="Group" objectType="TABLE" physicalName="Group" >
+  <table id="TAB32" populated="true" UUID="a02912b8-d163-48a1-a53a-60a16aedcc8c" name="Category" objectType="TABLE" physicalName="Category" >
    <remarks></remarks>
    <folder id="FOLTAB321" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL33" populated="true" UUID="a801c171-8a94-4138-831a-e6f7f56fbea9" autoIncrement="false" autoIncrementSequenceName="Group_idGroup_seq" defaultValue="" name="idGroup" nullable="0" physicalName="idGroup" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL33" populated="true" UUID="a801c171-8a94-4138-831a-e6f7f56fbea9" autoIncrement="false" autoIncrementSequenceName="Categorie_idGroup_seq" defaultValue="" name="idCategory" nullable="0" physicalName="idCategory" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL34" populated="true" UUID="5bf6135c-a168-4051-bb50-94ec308c0fb0" autoIncrement="false" autoIncrementSequenceName="Group_name_seq" defaultValue="" name="name" nullable="0" physicalName="name" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL34" populated="true" UUID="5bf6135c-a168-4051-bb50-94ec308c0fb0" autoIncrement="false" autoIncrementSequenceName="Category_name_seq" defaultValue="" name="name" nullable="0" physicalName="name" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL35" populated="true" UUID="7a0a7fcf-c5f6-499b-96d8-110df0fb53eb" autoIncrement="false" autoIncrementSequenceName="Group_comment_seq" defaultValue="" name="comment" nullable="0" physicalName="comment" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL35" populated="true" UUID="7a0a7fcf-c5f6-499b-96d8-110df0fb53eb" autoIncrement="false" autoIncrementSequenceName="Category_comment_seq" defaultValue="" name="comment" nullable="0" physicalName="comment" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     </folder>
@@ -136,8 +136,8 @@
     <folder id="FOLTAB322" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB324" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX36" populated="true" UUID="d26d61cd-b11b-4365-805f-135b11d95c5c" clustered="false" name="Group_pk" physicalName="group_pk" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC37" populated="true" UUID="d412cbd0-d1e0-469f-a2f9-03b075bef5c4" ascendingOrDescending="UNSPECIFIED" column-ref="COL33" name="idGroup" physicalName="idGroup" />
+    <index id="IDX36" populated="true" UUID="d26d61cd-b11b-4365-805f-135b11d95c5c" clustered="false" name="Category_pk" physicalName="group_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC37" populated="true" UUID="d412cbd0-d1e0-469f-a2f9-03b075bef5c4" ascendingOrDescending="UNSPECIFIED" column-ref="COL33" name="idCategory" physicalName="idCategory" />
     </index>
    </folder>
   </table>

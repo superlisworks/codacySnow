@@ -13,8 +13,14 @@ img {
     max-width: 100%;
     height: auto;
 }
-h1,h2 {
+h1 {
 	color:#0874ab;
+}
+
+h2{
+	color:#0874ab;
+	line-height: 7.2;
+	margin-top: -88px;
 }
 
 .imageflottante
@@ -42,5 +48,21 @@ p {
 .btn {
 	color:#0874ab;
 }
+
+.background{
+	 margin: 0px; 
+	 padding: 0px; 
+	 list-style: none; 
+	 position: relative; 
+	 height: 100%;
 }
 
+.homeImg {
+    height: calc(100vh - 56px);
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.py-5 bg-dark{
+	color:#0874ab;
+}
