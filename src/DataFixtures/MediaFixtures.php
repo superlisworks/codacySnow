@@ -12,9 +12,9 @@ class MediaFixtures extends Fixture
     {
         for($i = 1; $i <= 10; $i++){
             $media = new Media();
-            $media->setIdFigure("Media de la figure n°$i")
+            $media->setIdFigure($i)
             ->setName("Nom du media n°$i")
-            ->setType("Type de media n°$i");
+            ->setType(rand (0 , 1));
             
             $manager->persist($media);
         $manager->flush();

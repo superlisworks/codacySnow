@@ -34,16 +34,21 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link" href="{{ path('home') }}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/blog">Tricks</a>
+              <a class="nav-link" href="{{ path('blog') }}">Tricks</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">SingIn</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">SignUp</a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('blog_create') }}">Créer une figure</a>
+            </li>
             </li>
           </ul>
         </div>

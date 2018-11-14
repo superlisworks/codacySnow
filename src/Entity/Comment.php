@@ -17,7 +17,7 @@ class Comment
     private $id;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=255)
      */
     private $comment;
 
@@ -27,8 +27,7 @@ class Comment
     private $creationDate;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Figure", inversedBy="comments")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="integer")
      */
     private $idFigure;
 
@@ -36,6 +35,11 @@ class Comment
      * @ORM\Column(type="integer")
      */
     private $idUser;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $content;
 
     public function getId(): ?int
     {
@@ -66,12 +70,12 @@ class Comment
         return $this;
     }
 
-    public function getIdFigure(): ?Figure
+    public function getIdFigure(): ?int
     {
         return $this->idFigure;
     }
 
-    public function setIdFigure(?Figure $idFigure): self
+    public function setIdFigure(int $idFigure): self
     {
         $this->idFigure = $idFigure;
 
@@ -86,6 +90,18 @@ class Comment
     public function setIdUser(int $idUser): self
     {
         $this->idUser = $idUser;
+
+        return $this;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(string $content): self
+    {
+        $this->content = $content;
 
         return $this;
     }
