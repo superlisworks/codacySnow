@@ -124,7 +124,7 @@
     <column id="COL33" populated="true" UUID="5bf6135c-a168-4051-bb50-94ec308c0fb0" autoIncrement="false" autoIncrementSequenceName="Category_name_seq" defaultValue="" name="name" nullable="0" physicalName="name" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL34" populated="true" UUID="7a0a7fcf-c5f6-499b-96d8-110df0fb53eb" autoIncrement="false" autoIncrementSequenceName="Category_comment_seq" defaultValue="" name="comment" nullable="0" physicalName="comment" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL34" populated="true" UUID="7a0a7fcf-c5f6-499b-96d8-110df0fb53eb" autoIncrement="false" autoIncrementSequenceName="Category_content_seq" defaultValue="" name="content" nullable="0" physicalName="content" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     </folder>
@@ -150,7 +150,10 @@
     <column id="COL40" populated="true" UUID="b6802f82-541c-4456-8efc-fcff83f1aec5" autoIncrement="false" autoIncrementSequenceName="media_title_seq" defaultValue="" name="name" nullable="0" physicalName="name" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL41" populated="true" UUID="ffda3b83-1895-44ef-9283-ebe2ba673755" autoIncrement="false" autoIncrementSequenceName="Media_type_seq" defaultValue="" name="type" nullable="0" physicalName="type" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL41" populated="true" UUID="f7c6c8f2-4a9c-4a73-84a4-b97e2149c2de" autoIncrement="false" autoIncrementSequenceName="Media_content_seq" defaultValue="" name="content" nullable="0" physicalName="content" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL42" populated="true" UUID="ffda3b83-1895-44ef-9283-ebe2ba673755" autoIncrement="false" autoIncrementSequenceName="Media_type_seq" defaultValue="" name="type" nullable="0" physicalName="type" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     </folder>
@@ -159,23 +162,23 @@
     <folder id="FOLTAB372" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB374" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX42" populated="true" UUID="06bf2cf1-b287-4b51-bfc9-02a0d874e42f" clustered="false" name="Media_pk" physicalName="media_pk" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC43" populated="true" UUID="26850aac-805d-4ff0-9413-af0e3ce5bc80" ascendingOrDescending="UNSPECIFIED" column-ref="COL38" name="idMedia" physicalName="idMedia" />
+    <index id="IDX43" populated="true" UUID="06bf2cf1-b287-4b51-bfc9-02a0d874e42f" clustered="false" name="Media_pk" physicalName="media_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC44" populated="true" UUID="26850aac-805d-4ff0-9413-af0e3ce5bc80" ascendingOrDescending="UNSPECIFIED" column-ref="COL38" name="idMedia" physicalName="idMedia" />
     </index>
    </folder>
   </table>
   <relationships>
-   <relationship id="REL44" populated="true" UUID="6cba37c1-c1be-4b6a-a45a-363c584d2de5" deferrability="7" deleteRule="3" fk-table-ref="TAB23" fkCardinality="7" identifying="false" name="snowTricksFigure_comment_fk" physicalName="snowTricksFigure_comment_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP45" populated="true" UUID="0987b181-1c7a-40dd-9b46-4c03e39debb7" fk-column-ref="COL25" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   <relationship id="REL45" populated="true" UUID="6cba37c1-c1be-4b6a-a45a-363c584d2de5" deferrability="7" deleteRule="3" fk-table-ref="TAB23" fkCardinality="7" identifying="false" name="snowTricksFigure_comment_fk" physicalName="snowTricksFigure_comment_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP46" populated="true" UUID="0987b181-1c7a-40dd-9b46-4c03e39debb7" fk-column-ref="COL25" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL46" populated="true" UUID="3cbeddad-5b39-4f0e-8880-b8cabfec4f5f" deferrability="7" deleteRule="3" fk-table-ref="TAB37" fkCardinality="7" identifying="false" name="figure_media_fk" physicalName="figure_media_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP47" populated="true" UUID="e6a8c6a4-c677-45d9-86c0-ad541ac33f49" fk-column-ref="COL39" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   <relationship id="REL47" populated="true" UUID="3cbeddad-5b39-4f0e-8880-b8cabfec4f5f" deferrability="7" deleteRule="3" fk-table-ref="TAB37" fkCardinality="7" identifying="false" name="figure_media_fk" physicalName="figure_media_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP48" populated="true" UUID="e6a8c6a4-c677-45d9-86c0-ad541ac33f49" fk-column-ref="COL39" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL48" populated="true" UUID="6674216e-0b1a-48b5-8dd5-2a468da35a49" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="User_snowTricksFigure_fk" physicalName="User_snowTricksFigure_fk" pk-table-ref="TAB10" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP49" populated="true" UUID="78d89c32-1247-49c2-83f3-4612050826a0" fk-column-ref="COL4" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL11" />
+   <relationship id="REL49" populated="true" UUID="6674216e-0b1a-48b5-8dd5-2a468da35a49" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="User_snowTricksFigure_fk" physicalName="User_snowTricksFigure_fk" pk-table-ref="TAB10" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP50" populated="true" UUID="78d89c32-1247-49c2-83f3-4612050826a0" fk-column-ref="COL4" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL11" />
    </relationship>
-   <relationship id="REL50" populated="true" UUID="baca005a-21b0-44f8-a486-989c1554aa33" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="group_figure_fk" physicalName="group_figure_fk" pk-table-ref="TAB31" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP51" populated="true" UUID="f9c9fdad-073a-43ac-9db0-1865cd46bee3" fk-column-ref="COL3" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL32" />
+   <relationship id="REL51" populated="true" UUID="baca005a-21b0-44f8-a486-989c1554aa33" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="group_figure_fk" physicalName="group_figure_fk" pk-table-ref="TAB31" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP52" populated="true" UUID="f9c9fdad-073a-43ac-9db0-1865cd46bee3" fk-column-ref="COL3" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL32" />
    </relationship>
   </relationships>
  </target-database>
@@ -188,10 +191,10 @@
   <table-pane table-ref="TAB23" x="516" y="383" bgColor="0xeeeeee" fgColor="0x206cff" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB31" x="88" y="117" bgColor="0xeeeeee" fgColor="0x206cff" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB37" x="255" y="386" bgColor="0xeeeeee" fgColor="0x206cff" rounded="false" dashed="false"/>
-  <table-link relationship-ref="REL48" pkConnection="0.2781065088757396" fkConnection="0.4235294117647059" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
-  <table-link relationship-ref="REL44" pkConnection="0.8176795580110497" fkConnection="0.46938775510204084" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
-  <table-link relationship-ref="REL50" pkConnection="0.6056338028169014" fkConnection="0.336283185840708" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL46" pkConnection="0.1878453038674033" fkConnection="0.48066298342541436" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL49" pkConnection="0.2781065088757396" fkConnection="0.4235294117647059" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL45" pkConnection="0.8176795580110497" fkConnection="0.46938775510204084" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL51" pkConnection="0.6056338028169014" fkConnection="0.336283185840708" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL47" pkConnection="0.1878453038674033" fkConnection="0.48066298342541436" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">
