@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Figure;
+use App\Repository\FigureRepository;
 
 class SiteController extends AbstractController
 {
@@ -20,16 +22,25 @@ class SiteController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function home() {
-        return $this->render('site/home.html.twig');
+    public function home(FigureRepository $repo) {
+    
+        $figures = $repo->findAll();
+
+        return $this->render('site/home.html.twig', [
+            'figures' => $figures
+
+        ]);
     }
     
     /**
-     * @Route("/site/12", name="site_show")
+     * @Route("/site/{id}", name="site_show")
      */
     
-    public function show(){
-        return $this->render('site/show.html.twig');
+    public function show(Figure $figure){
+         
+        return $this->render('site/show.html.twig', [
+            'figure' => $figure
+        ]);
     }
 }
  

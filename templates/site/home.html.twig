@@ -26,118 +26,21 @@
       
       <hr>
       
+    <section class="figures">
+    
+    {% for figure in figures %}
 
-      <div class="row">
-
-        <div class="col-md-3 col-sm-6 mb-4">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 mb-4">
           <a href="#">
             <img class="img-fluid" src="/assets/img/figuresmall.jpg" alt="">
-          </a>
-          <a class="btn" href="{{ path('site_show') }}">Mute</a>
+            </a>
+          <a class="btn" href="{{ path('site_show' , {'id': figure.id}) }}">{{ figure.name}}</a>
           <i class="fas fa-pencil-alt"></i>
           <i class="fas fa-trash-alt"></i>
-          </div>
-          
-       
-
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="/assets/img/figure1small.jpg" alt="">
-          </a>
-          <a class="btn" href="{{ path('site_show') }}">Style week</a>
-          <i class="fas fa-pencil-alt"></i>
-          <i class="fas fa-trash-alt"></i>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="/assets/img/figure2small.jpg" alt="">
-          </a>
-           <a class="btn" href="{{ path('site_show') }}">Indy</a>
-          <i class="fas fa-pencil-alt"></i>
-          <i class="fas fa-trash-alt"></i>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="/assets/img/figure3small.jpg" alt="">
-          </a>
-          <a class="btn" href="{{ path('site_show') }}">Stalefish</a>
-          <i class="fas fa-pencil-alt"></i>
-          <i class="fas fa-trash-alt"></i>
-        </div>
-        
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="/assets/img/figure4small.jpg" alt="">
-          </a>
-           <a class="btn" href="{{ path('site_show') }}">Tail Grab</a>
-           <i class="fas fa-pencil-alt"></i>
-           <i class="fas fa-trash-alt"></i>
-        </div>
-        
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="/assets/img/figure5small.jpg" alt="">
-          </a>
-          <a class="btn" href="{{ path('site_show') }}">Nose Grab</a>
-          <i class="fas fa-pencil-alt"></i>
-          <i class="fas fa-trash-alt"></i>
-        </div>
-        
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="/assets/img/figure6small.jpg" alt="">
-          </a>
-          <a class="btn" href="{{ path('site_show') }}">360</a>
-          <i class="fas fa-pencil-alt"></i>
-          <i class="fas fa-trash-alt"></i>
-        </div>
-        
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="/assets/img/figure7small.jpg" alt="">
-          </a>
-          <a class="btn" href="{{ path('site_show') }}">Fiche</a>
-          <i class="fas fa-pencil-alt"></i>
-          <i class="fas fa-trash-alt"></i>
-        </div>
-        
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="/assets/img/figure8small.jpg" alt="">
-          </a>
-          <a class="btn" href="{{ path('site_show') }}">Fiche</a>
-          <i class="fas fa-pencil-alt"></i>
-          <i class="fas fa-trash-alt"></i>
-        </div>
-        
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="/assets/img/figure9small.jpg" alt="">
-          </a>
-          <a class="btn" href="{{ path('site_show') }}">Fiche</a>
-          <i class="fas fa-pencil-alt"></i>
-          <i class="fas fa-trash-alt"></i>
-        </div>
-        
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="/assets/img/figure10small.jpg" alt="">
-          </a>
-          <a class="btn" href="{{ path('site_show') }}">Fiche</a>
-          <i class="fas fa-pencil-alt"></i>
-          <i class="fas fa-trash-alt"></i>
-        </div>
-        
-        <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="/assets/img/figure12small.jpg" alt="">
-          </a>
-          <a class="btn" href="{{ path('site_show') }}">Fiche</a>
-          <i class="fas fa-pencil-alt"></i>
-          <i class="fas fa-trash-alt"></i>
-        </div>
-
       </div>
+        </div>
+
+      {% endfor %}
+    </section>
 {% endblock %}

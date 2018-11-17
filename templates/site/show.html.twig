@@ -7,15 +7,15 @@
      <div class="homeImg" style="background:url(/assets/img/figure.jpg)">
      <i class="fas fa-pencil-alt"></i>
       <i class="fas fa-trash-alt"></i>
-{#       <h2>{{ figure.name }}</h2>#}
+    	 <h2>{{ figure.name }}</h2>
       </div>
       
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nisl purus, ut faucibus tellus tristique ut. Vivamus eu elit non felis vulputate lacinia nec et ex. Ut nec libero sit amet ante pulvinar pulvinar. Donec tempor commodo dignissim. Aenean eros nisi, tincidunt id mi quis, dignissim varius nibh. In sollicitudin nisl vitae ipsum aliquam tempor. Cras sed velit congue, consequat purus nec, consectetur dolor. Etiam eros lorem, iaculis vel accumsan quis, auctor a magna. Etiam convallis placerat nisi, vitae bibendum diam hendrerit et. Cras nisi elit, congue non lorem vitae, tincidunt posuere arcu. Nulla magna augue, facilisis eget congue ac, tincidunt et ante. Ut rutrum, sapien ut mollis imperdiet, tellus tortor pellentesque mauris, quis iaculis velit lorem vel metus. Aliquam non sem vel enim pretium sodales in et tellus. Sed efficitur ligula non fermentum faucibus. Mauris vel consectetur dolor, vitae venenatis tortor. Morbi imperdiet nisl vitae eros laoreet, vitae auctor ligula pellentesque.</p>
 
-
-<p>Aliquam erat volutpat. In hac habitasse platea dictumst. Fusce tincidunt, neque varius vehicula iaculis, ex tellus consequat sapien, vel maximus nunc lectus eu odio. Sed fermentum mi eros, et cursus odio pretium sit amet. Vivamus gravida iaculis vehicula. Aliquam vulputate, turpis at fringilla euismod, velit est faucibus quam, nec pulvinar ipsum mi quis nisi. Vivamus quis maximus sem, ac fringilla metus. Etiam at diam lacinia, rutrum lectus eu, elementum arcu. Ut viverra urna ac nulla condimentum, id ullamcorper ipsum dignissim. Ut ut tristique lorem, nec ultrices ligula. Etiam condimentum leo nunc, ut bibendum leo eleifend in. Ut fringilla diam ut purus porttitor, vel eleifend odio convallis. Sed ut pellentesque elit. Nunc leo purus, pellentesque in sollicitudin non, mollis eget ligula.</p>
-{#     {{ figure.content | raw }}#}
-
+<div class="metadata">Ecrit le {{ figure.createAt | date('d/m/Y')}}
+</div>
+ 	<div class="content">
+     {{ figure.content | raw }}
+</div>
 </article>
 
 {% endblock %}
