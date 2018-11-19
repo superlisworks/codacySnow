@@ -4,8 +4,15 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use App\Entity\Figure;
 use App\Repository\FigureRepository;
+use App\Form\FigureType;
+
 
 class SiteController extends AbstractController
 {
@@ -22,6 +29,7 @@ class SiteController extends AbstractController
     /**
      * @Route("/", name="home")
      */
+
     public function home(FigureRepository $repo) {
     
         $figures = $repo->findAll();
@@ -33,6 +41,39 @@ class SiteController extends AbstractController
     }
     
     /**
+     * @Route("/new", name="site_create")
+     * @Route("/new/{id}/edit", name="site_edit")
+     */
+
+    public function form(Figure $figure = null, Request $request, ObjectManager $manager) {
+
+            if(!$figure) {
+                $figure = new Figure();
+            }
+
+            $form = $this->createForm(FigureType::class, $figure);
+
+             $form->handleRequest($request); 
+             
+             if($form->isSubmitted() && $form->isValid()) {
+                if(!$figure->getId()){
+                   $figure->setCreateAt(new \DateTime()); 
+            }
+                
+                $manager->persist($figure);
+                $manager->flush();
+
+                return $this->redirectToRoute('site_show', [
+                    'id' => $figure->getId()]);
+        }  
+                        
+             return $this->render('site/create.html.twig', [
+                'formFigure' => $form->createView(),
+                'editMode'   => $figure->getId() !== null
+            ]);
+        }
+
+    /**
      * @Route("/site/{id}", name="site_show")
      */
     
@@ -42,5 +83,7 @@ class SiteController extends AbstractController
             'figure' => $figure
         ]);
     }
+
+    
 }
  

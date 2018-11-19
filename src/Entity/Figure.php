@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\FigureRepository")
@@ -18,11 +19,13 @@ class Figure
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=8, max=255, minMessage="Votre nom de figure est trop court")
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Length(min=50, minMessage="Votre description est trop courte")
      */
     private $content;
 
