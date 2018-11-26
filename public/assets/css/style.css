@@ -46,7 +46,13 @@ p {
 }
 
 .btn {
-	color:#0874ab;
+	color:fff;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #0874ab;
+    border-color:white;
 }
 
 .background{
