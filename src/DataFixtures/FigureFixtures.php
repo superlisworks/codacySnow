@@ -1,5 +1,4 @@
 <?php
-
 namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -10,54 +9,52 @@ use App\Entity\Comment;
 
 class FigureFixtures extends Fixture
 {
+
     public function load(ObjectManager $manager)
     {
+        $faker = \Faker\Factory::create('fr_FR');
 
-       $faker = \Faker\Factory::create('fr_FR');
+        // creation of 3 categories Faker
 
-       // creation of 3 categories Faker
+        for ($i = 1; $i <= 3; $i ++) {
+            $category = new Category();
+            $category->setTitle($faker->sentence())
+                ->setDescription($faker->paragraph());
 
-       for($i = 1; $i <= 3; $i++) {
-        $category = new Category();
-        $category->setTitle($faker->sentence())
-                 ->setDescription($faker->paragraph());
-               
-               $manager->persist($category);  
+            $manager->persist($category);
 
-        // creation of 4 or 6 figures Faker
+            // creation of 4 or 6 figures Faker
 
-       for($j = 1; $j <= mt_rand(4, 6); $j++){
-       		$figure = new Figure();
+            for ($j = 1; $j <= mt_rand(4, 6); $j ++) {
+                $figure = new Figure();
 
-          $content  = '<p>' . join($faker->paragraphs(5), '</p><p>') . '</p>';
-          
-       		$figure->setName($faker->sentence())
-       				   ->setContent($content)
-       				   ->setCreateAt($faker->dateTimeBetween('-6 months'))
-                 ->setCategory($category);
+                $content = '<p>' . join($faker->paragraphs(5), '</p><p>') . '</p>';
 
-       		$manager->persist($figure);
+                $figure->setName($faker->sentence())
+                    ->setContent($content)
+                    ->setCreateAt($faker->dateTimeBetween('-6 months'))
+                    ->setCategory($category);
 
-          // We give comments to a figure
-          for($k =1; $k <= mt_rand(4,10); $k++) {
-              $comment = new Comment();
+                $manager->persist($figure);
 
-              $content  = '<p>' . join($faker->paragraphs(2), '</p><p>') . '</p>';
+                // We give comments to a figure
+                for ($k = 1; $k <= mt_rand(4, 10); $k ++) {
+                    $comment = new Comment();
 
-              $days = (new \DateTime())->diff($figure->getCreateAt())->days;
+                    $content = '<p>' . join($faker->paragraphs(2), '</p><p>') . '</p>';
 
+                    $days = (new \DateTime())->diff($figure->getCreateAt())->days;
 
-              $comment->setAuthor($faker->name)
-                      ->setContent($content)
-                      ->setCreateAt($faker->dateTimeBetween ('-' . $days . 'days'))
-                      ->setFigure($figure);
+                    $comment->setAuthor($faker->name)
+                        ->setContent($content)
+                        ->setCreateAt($faker->dateTimeBetween('-' . $days . 'days'))
+                        ->setFigure($figure);
 
-                      $manager->persist($comment);
-              }
-           }   
-       }
-      
+                    $manager->persist($comment);
+                }
+            }
+        }
+
         $manager->flush();
     }
-     
 }
