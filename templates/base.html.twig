@@ -1,80 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>SnowBoard P6</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="/assets/css/portfolio-item.css" rel="stylesheet">
-    <link href="/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://icons8.com">
-    
-    
+    <!-- META TAGS -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico">
+    <meta name="author" content="Tanislav Robert">
+    <meta name="description" content="/!\ description à refaire pour les moteurs de recherche">
+    <!-- STYLES -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/flexslider.css">
+    <link rel="stylesheet" href="assets/css/animsition.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/snowtricks.css">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+  </head>
+  <body class="animsition">
+    <!-- Border -->
+    <span class="frame-line top-frame visible-lg"></span>
+    <span class="frame-line right-frame visible-lg"></span>
+    <span class="frame-line bottom-frame visible-lg"></span>
+    <span class="frame-line left-frame visible-lg"></span>
+    <!-- HEADER  -->
+    <header class="main-header">
+      <div class="container-fluid">
+        <!-- box header -->
+        <div class="box-header">
+          <div class="box-logo">
+            <a href="{{ path('home') }}"><img src="assets/img/logowhite.png" alt="Logo"></a>
+          </div>
+          <!-- box-nav -->
+          <a class="box-primary-nav-trigger" >
+          <span class="box-menu-icon"></span>
+          </a>
+          <!-- box-primary-nav-trigger -->
+        </div>
+        <!-- end box header -->
+        <!-- nav -->
+        <nav>
+          <ul class="box-primary-nav">
+            <li><a class="box-label" href="{{ path('home') }}">SNOW TRICKS</a></li>
+            <li><a href="{{ path('home') }}">accueil</a> <i class="lnr lnr-home"></i></li>
+            {% if not app.user %}
+            <li><a href="{{ path('security_login') }}">Connexion</a></li>
+            <li><a href="{{ path('security_registration') }}">S'inscrire</a></li>
+            {% else %}
+            <li><a href="{{ path('site_create') }}">Créer une figure</a></li>
+            <li><a href="{{ path('security_logout') }}">Déconnexion</a></li>
+            {% endif %}
+            
+            <li class="box-label"> -- RÉSEAUX SOCIAUX -- </li>
+            <li class="box-social"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li class="box-social"><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+            <li class="box-social"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li class="box-social"><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+          </ul>
+        </nav>
+        <!-- end nav -->
+        <!-- box-intro -->
+        <section class="box-intro bg-film">
+          <div class="table-cell">
+            <h3 class="box-headline letters rotate-2">
+              <span class="box-words-wrapper">
+              <b class="is-visible">SITE &nbsp; COMMUNAUTAIRE.</b>
+              <b>&nbsp;LE &nbsp; PLUS &nbsp; FUN!!</b>
+              </span>
+            </h3>
+            <h1>SnowTricks</h1>
+          </div>
+          <div class="mouse">
+            <div class="scroll"></div>
+          </div>
+        </section>
+        <!-- end box-intro -->
+      </div>
+    </header>
   </head>
     <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand logoKarine logoHeader" href="{{ path('home') }}">Snow board</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{{ path('home') }}">Accueil</a>
-            </li>
-
-            {% if not app.user %}
-            <li class="nav-item">
-              <a class="nav-link" href="{{ path('security_login') }}">Connexion</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ path('security_registration') }}">S'inscrire</a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link" href="{{ path('site_create') }} ">Créer une figure</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ path('security_logout') }}">Deconnexion</a>
-            </li>
-            {% endif %}
-            </li>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    
+ 
     
         {% block body %}
       
         {% endblock %}
         
-         <!-- Footer -->
-    <footer class="py-5 bg-dark">
+          <!-- Footer -->
+    <footer class="main-footer">
+      <svg preserveAspectRatio="none" viewBox="0 0 100 102" height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
+        <path d="M0 0 L50 100 L100 0 Z" fill="#fff" stroke="#fff"></path>
+      </svg>
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy - Site communautaire de Karine 2018</p>
+        <div class="row mt-100 mb-50 footer-widgets">
+          <!-- Start Contact Widget -->
+          <div class="col-md-6 col-xs-12">
+            <div class="footer-widget contact-widget">
+              <img src="assets/img/logowhite.png" class="logo-footer img-responsive" alt="Footer Logo" />
+              <p>Ce site est ouvert a tous les mordus de snowBoard pour y ajouter leur touche personnelle !! Bienvenue</p>
+              <ul class="social-icons">
+                <li>
+                  <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
+                </li>
+                <li>
+                  <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+                </li>
+                <li>
+                  <a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                </li>
+                <li>
+                  <a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
+                </li>
+                <li>
+                  <a class="instgram" href="#"><i class="fa fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a class="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
+                </li>
+                <li>
+                  <a class="skype" href="#"><i class="fa fa-skype"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- .col-md-3 -->
+          <!-- End Contact Widget -->
+          <!-- Start Twitter Widget -->
+          <div class="col-md-3 col-xs-12">
+            <div class="footer-widget twitter-widget">
+              <h4>Karine</h4>
+              Email: HelloContact@gmail.com <br>
+            </div>
+          </div>
+          <!-- .col-md-3 -->
+          <!-- End Twitter Widget -->
+          <!-- Start Flickr Widget -->
+          <div class="col-md-3 col-xs-12">
+            <div class="footer-widget company-links">
+              <h4>Company</h4>
+              <ul class="footer-links">
+                <li><a href="#">A propos</a></li>
+                <li><a href="#">OpenClassroom</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- .col-md-3 -->
+          <!-- End Flickr Widget -->
+        </div>
+        <!-- .row -->
+        <!-- Start Copyright -->
+        <div class="copyright-section">
+          <div class="row">
+            <div class="col-md-6">
+              <p> <a href="https://openclassrooms.com/fr/projects/developpez-de-a-a-z-le-site-communautaire-snowtricks">&copy; 2018 snowTricks for openclassrooms</a> </p>
+            </div>
+            <!-- .col-md-6 -->
+          </div>
+          <!-- .row -->
+        </div>
+        <!-- End Copyright -->
       </div>
-      <!-- /.container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
- 
-        {% block javascripts %}{% endblock %}
-    </body>
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="assets/js/animated-headline.js"></script>
+    <script type="text/javascript" src="assets/js/menu.js"></script>
+    <script type="text/javascript" src="assets/js/modernizr.js"></script>
+    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
+    <script type="text/javascript" src="assets/js/init.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/smooth-scroll.js"></script>
+    <script type="text/javascript" src="assets/js/numscroller.js"></script>
+    <script type="text/javascript" src="assets/js/wow.min.js"></script>
+    <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript">
+      $(window).load(function() {
+        new WOW().init();
+      
+        // initialise flexslider
+        $('.flexslider').flexslider({
+          animation: "fade",
+          directionNav: true,
+          controlNav: false,
+          keyboardNav: true,
+          slideToStart: 0,
+          animationLoop: true,
+          pauseOnHover: false,
+          slideshowSpeed: 4000,
+        });
+      
+        smoothScroll.init();
+      
+        // initialize isotope
+        var $container = $('.portfolio_container');
+        $container.isotope({
+          filter: '*',
+        });
+      
+        $('.portfolio_filter a').click(function(){
+          $('.portfolio_filter .active').removeClass('active');
+          $(this).addClass('active');
+      
+          var selector = $(this).attr('data-filter');
+          $container.isotope({
+            filter: selector,
+            animationOptions: {
+              duration: 500,
+              animationEngine : "jquery"
+            }
+          });
+          return false;
+        });
+      });
+    </script>
+    {% block javascripts %}{% endblock %}
+  </body>
 </html>
+ 
+        
+   

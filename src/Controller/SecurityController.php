@@ -31,7 +31,7 @@ class SecurityController extends AbstractController
 
             $user->setLastConnection(new \DateTime ());
     		
-    		$manager->persist($user);
+    		$manager->persist($user);	
     		$manager->flush();
 
             return $this->redirectToRoute('security_login');

@@ -1,0 +1,79 @@
+:root{
+    --maincolor:#0874AB;
+}
+
+/* header */
+.box-logo img {
+    height: 50px;
+    background-color: var(--maincolor);
+    border-radius : 50%;
+    padding:0.1rem;
+}
+
+.box-primary-nav-trigger .box-menu-icon::before, .box-primary-nav-trigger .box-menu-icon:after, .box-primary-nav-trigger .box-menu-icon {
+    background-color: var(--maincolor);
+}
+
+/* footer */
+
+img.logo-footer {
+    height: 10rem;
+}
+footer.main-footer {
+    background-color: var(--maincolor);
+    z-index: 0;
+    color: whitesmoke;
+    position: relative;
+}
+
+footer p {
+    color: whitesmoke;
+}
+
+.contact-widget ul.social-icons li a i, .footer-widget h4, .company-links a {
+    color:inherit;
+}
+
+.copyright-section {
+    border-top: 1px solid whitesmoke;
+}
+
+/* liste des figures */
+
+.process-numbers {
+		color: var(--maincolor);
+		opacity: .2;
+}
+.portfolio_item .portfolio_item_hover .item_info span {
+    display: block;
+    color: var(--maincolor);
+}
+.portfolio_item .portfolio_item_hover .item_info em {
+    background-color: var(--maincolor);
+}
+
+/* menu */
+
+.box-primary-nav {
+    background: var(--maincolor);
+}
+.box-primary-nav .box-label {
+    color: #00ccff;
+}
+.box-primary-nav li {
+    color: #00ccff;
+}
+
+/* main section */
+
+.box-intro h1, .box-intro h3{
+    color: white;
+    text-shadow: 3px 2px 0 var(--maincolor);
+}
+
+.mouse {
+    border: 1px solid white;
+}
+.scroll {
+    background: white;
+}

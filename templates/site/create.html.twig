@@ -1,25 +1,53 @@
 {% extends 'base.html.twig' %}
 
-{% form_theme formFigure 'bootstrap_4_layout.html.twig' %}
+
 
 {% block body %}
 
-	<h1>Création d'une figure</h1>
 
-	{{ form_start(formFigure) }}
+<section id="contact" class="contact mbr-box mbr-section mbr-section--relative mbr-section--bg-adapted">
+    <div class="container">
+      <div class="col-md-6 col-sm-12">
+        <div class="row">
+          <h4> Ajouter des médias</h4>
+          <p class="libre-text mt-50">
+            Images :
+            <a href="#" class="default-btn"> c'est par ici <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+          </p>
+          <p>Vidéo : 
+            <a href="#" class="default-btn"> c'est par ici <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+          </p>
+        </div>
+      </div>
 
-	{{ form_row(formFigure.name, {'attr': {'placeholder': "Nom de la figure"}}) }}
-	{{ form_row(formFigure.category) }}
-	{{ form_row(formFigure.content, {'attr': {'placeholder': "Description de la figure"}}) }} 
 
-	<button type="submit" class="btn btn-success">
-		{% if editMode %}
-		Enregistrer les modifications
-		{% else %}
-		Ajouter la figure
-		{% endif %}
-	</button>
-	
-	{{ form_end(formFigure) }}
-	
-{% endblock %}
+ <div class=" col-md-offset-1 col-md-5 col-sm-12">
+        <div class="row center">
+          <div class="newsletter">
+            <h4>Création |Modification d'une figure</h4>
+  
+            <form action="#" method="post">
+              <div class="form-group">
+              
+                {{ form_start(formFigure) }}
+                {{ form_row(formFigure.name, {'attr': {'placeholder': "Nom de la figure"}}) }}
+                {{ form_row(formFigure.category) }}
+                {{ form_row(formFigure.content, {'attr': {'placeholder': "Description de la figure"}}) }} 
+                
+
+              <button id="submit_btn" class="default-btn"> 
+              {% if editMode %}
+               Enregistrer les modifications
+               {% else %}
+               Ajouter la figure
+               {% endif %}
+               <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+              {{ form_end(formFigure) }}
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    {% endblock %}

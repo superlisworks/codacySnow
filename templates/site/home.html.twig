@@ -2,46 +2,66 @@
 
 {% block body %}
 
-
-
-<!-- Page Content -->
-    
-
-      <!-- Portfolio Item Heading -->
       
 
      <div class="homeImg" style="background:url(/assets/img/snowhome.jpg)">
-     <div class="clicTricks">
+     
      
      <a href="#bas"><img src="https://img.icons8.com/material/50/0874ab/snowboarding.png" id="haut"></a>
      </div>
-      </div>
       
-     <div class="container">
-     
+      
+       <!-- PORTFOLIO -->
+    <section class="portfolio">
+      <div class="top-right-separator hidden-xs"></div>
+      <div class="container">
+        <div class="col-md-8 col-md-offset-2 col-sm-12">
+          <div class="row center">
+            <div class="section-title mb-100">
+              <div class="process-numbers">15</div>
+              <h2>principales figures</h2>
+              <p class="module-subtitle">Le Snowboard ou surf des neiges est un descendant logique du surf des mers et du skateboard. Le surf est une pratique sportive originaire d'Hawaï au moins au xve siècle et représente un élément important de la culture de ces îles. Le surf a aussi inspiré le skateboard, initié en 1950 et qui se développera plus vite, le snowboard sera plus long à être mis au point et à se répandre mais gardera l'esprit de ces 2 sports.
 
-      <!-- Related Projects Row -->
-      <h2>Bienvenue dans le site communautaire de SnowTricks le plus fun !</h2>
-      
-      
-      <hr>
-      
-    <section class="figures">
-    
-    {% for figure in figures %}
-
-    <div class="row">
-      <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
-            <img class="img-fluid" src="/assets/img/figuresmall.jpg" alt="">
-            </a>
-          <a class="btn" href="{{ path('site_show' , {'id': figure.id}) }}">{{ figure.name}}</a>
-          <i class="fas fa-pencil-alt"></i>
-          <i class="fas fa-trash-alt"></i>
-      </div>
+On peut retrouver les prémices du snowboard chez les Mongols au xviiie siècle, puis plus récemment dans les années 1920 : dès cette époque, il semble que de nombreuses personnes se soient essayées à glisser sur la neige debout sur une planche indépendamment de toute invention ou commercialisation. Les premiers dépôts de brevets attribuent l'invention à Jake Burton.
+              </p>
+            </div>
+          </div>
         </div>
-        <a href="#haut"><i class="fas fa-angle-double-up"></i></a>
-        <div id="bas"></div>
-      {% endfor %}
+        
+        <!-- categories  -->
+    <div class="col-md-3">
+          <div class="row categories-grid">
+           L'équipement se compose d'une planche de snowboard (board en anglais signifie « planche » et snow signifie « neige »), d'une paire de fixations (il en existe plusieurs types) et d'une paire de bottes adaptées (désignées par l'anglicisme boots). La position sur la planche est proche de celle du skateur : de profil, les pieds posés sur une ligne en travers de la planche, l'un derrière l'autre.
+          </div>
+        </div>
+        
+        <div class="col-md-9">
+          <div class="row portfolio_container">
+{% for figure in figures %}
+<!-- single work -->
+<div class="col-md-4 photography">
+  <a class="portfolio_item work-grid" href="{{ path('site_show' , {'id': figure.id}) }}">{{ figure.name }}</a>
+    <img src="/assets/img/figuresmall.jpg" alt="image">
+    <div class="portfolio_item_hover">
+      <div class="item_info">
+        {% if not app.user %}
+        <span><a class="btn" href="{{ path('site_show' , {'id': figure.id}) }}"></a></span>
+        {% else %}
+        <span><a class="btn" href="{{ path('site_show' , {'id': figure.id}) }}"></a></span>
+        <a href="{{ path('site_edit' , {'id': figure.id}) }}"><i class="fa fa-pencil"></i></a>
+        <i class="fa fa-trash"></i>
+       {% endif %}
+     </div>
+    </div>
+  </a>
+</div>
+
+
+{% endfor %}
+</div>
+</div>
+</div>
     </section>
+    <a href="#haut"><i class="fas fa-angle-double-up"></i></a>
+        <div id="bas"></div>
 {% endblock %}

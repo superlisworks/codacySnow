@@ -20,7 +20,6 @@ class FigureType extends AbstractType
                 'choice_label'=>'title'
             ])
             ->add('content')
-            ->add('createAt')
         ;
     }
 

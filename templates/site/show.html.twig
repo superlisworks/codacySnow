@@ -1,50 +1,44 @@
-{% extends 'base.html.twig'%}
+{% extends 'base.html.twig' %}
 
 {% block body %}
 
-<article>
-      
-     <div class="homeImg" style="background:url(/assets/img/figure.jpg)">
-     <i class="fas fa-pencil-alt"></i>
-      <i class="fas fa-trash-alt"></i>
-    	 <h2>{{ figure.name }}</h2>
+
+<section id="contact" class="contact mbr-box mbr-section mbr-section--relative mbr-section--bg-adapted">
+    <div class="container">
+      <div class="col-md-6 col-sm-12">
+        <div class="row">
+          <h4>{{ figure.name }}</h4>
+          <p class="libre-text mt-50">
+            Fiche :
+            <div class="metadata">Ecrit le {{ figure.createAt | date('d/m/Y')}} à {{ figure.createAT | date('H:i')}} dans la catégorie {{ figure.category.title }}</div>
+         </div>
+         <div class="content">
+               {{ figure.content | raw }}
+          </div>
+          </p>
+        </div>
       </div>
-      
 
-<div class="metadata">Ecrit le {{ figure.createAt | date('d/m/Y')}} à {{ figure.createAT | date('H:i')}} dans la catégorie {{ figure.category.title }}</div>
-</div>
- 	<div class="content">
-     {{ figure.content | raw }}
-</div>
-</article>
 
-<section id="commentaires">
-	<h3>{{ figure.comments | length }} commentaires : </h3>
-	{% for comment in figure.comments %}
-	<div class="comment">
-		<div class="row">
-			<div class="col-3">
-				{{comment.author}} (<small>{{comment.createAt | date ('d/m/Y à H:i')}})</small>
-			</div>
-			<div class="col">
-				{{comment.content | raw}}
-			</div>
-		</div>
-	</div>
-	{% endfor %}
-	
-	
-  {% if app.user %}
-	{{ form_start(commentForm) }}
-	{{ form_row(commentForm.author, {'attr': {'placeholder': "votre nom"}})}}
-	{{ form_row(commentForm.content, {'attr': {'placeholder': "votre commentaire"}})}}
+ <div class=" col-md-offset-1 col-md-5 col-sm-12">
+        <div class="row center">
+          <div class="newsletter">
+            <h4>Commentaires</h4>
+            
+            <form action="#" method="post">
+              <div class="form-group">
+                {{ form_start(Commentform) }}
+                {{ form_row(Commentform.author, {'attr': {'placeholder': "Auteur"}}) }}
+                {{ form_row(Commentform.content, {'attr': {'placeholder': "commentaire"}}) }} 
+                
 
-	<button type="submit" class="btn btn-sucess">Commenter !</button>
-	{{ form_end(commentForm) }}
-	
-	{% else %}
-	   <h2>Connectez vous pour discuster de snow :) !</h2>
-	   <a href="{{ path('security_login') }}" class="btn btn-primary">Connexion</a>
-	 {% endif %}  
-</section>
-{% endblock %}
+             <i class="fa fa-angle-double-right" aria-hidden="true">Commenter</i></button>
+              {{ form_end(formComment) }}
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    {% endblock %}
