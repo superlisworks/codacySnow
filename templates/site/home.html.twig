@@ -3,14 +3,6 @@
 {% block body %}
 
       
-
-     <div class="homeImg" style="background:url(/assets/img/snowhome.jpg)">
-     
-     
-     <a href="#bas"><img src="https://img.icons8.com/material/50/0874ab/snowboarding.png" id="haut"></a>
-     </div>
-      
-      
        <!-- PORTFOLIO -->
     <section class="portfolio">
       <div class="top-right-separator hidden-xs"></div>
@@ -34,34 +26,28 @@ On peut retrouver les prémices du snowboard chez les Mongols au xviiie siècle,
            L'équipement se compose d'une planche de snowboard (board en anglais signifie « planche » et snow signifie « neige »), d'une paire de fixations (il en existe plusieurs types) et d'une paire de bottes adaptées (désignées par l'anglicisme boots). La position sur la planche est proche de celle du skateur : de profil, les pieds posés sur une ligne en travers de la planche, l'un derrière l'autre.
           </div>
         </div>
-        
-        <div class="col-md-9">
-          <div class="row portfolio_container">
-{% for figure in figures %}
-<!-- single work -->
-<div class="col-md-4 photography">
-  <a class="portfolio_item work-grid" href="{{ path('site_show' , {'id': figure.id}) }}">{{ figure.name }}</a>
-    <img src="/assets/img/figuresmall.jpg" alt="image">
-    <div class="portfolio_item_hover">
-      <div class="item_info">
-        {% if not app.user %}
-        <span><a class="btn" href="{{ path('site_show' , {'id': figure.id}) }}"></a></span>
-        {% else %}
-        <span><a class="btn" href="{{ path('site_show' , {'id': figure.id}) }}"></a></span>
-        <a href="{{ path('site_edit' , {'id': figure.id}) }}"><i class="fa fa-pencil"></i></a>
-        <i class="fa fa-trash"></i>
-       {% endif %}
-     </div>
-    </div>
-  </a>
-</div>
-
-
+       
+        {% for figure in figures %}
+          <div class="col-md-6 photography" onclick="window.location=' {{ path('site_show' , {'id': figure.id}) }}'">
+              <a class="portfolio_item work-grid">
+                <img src="/assets/img/figure5small.jpg" alt="image">
+                <div class="portfolio_item_hover">
+                  <div class="item_info">
+                    <span>{{ figure.name }}</span>
+                    {% if app.user %}
+                    <em onclick="window.location='{{ path('site_edit' , {'id': figure.id}) }}'; event.stopPropagation();"><i class="fa fa-pencil"></i></em>
+                    <em onclick="window.location='{{ path('site_edit' , {'id': figure.id}) }}'; event.stopPropagation();"><i class="fa fa-trash"></i></em> 
+                    {% endif %}
+                  </div><!--  -->
+                </div>
+              </a>
+            </div>
 {% endfor %}
 </div>
 </div>
 </div>
     </section>
-    <a href="#haut"><i class="fas fa-angle-double-up"></i></a>
-        <div id="bas"></div>
+    
 {% endblock %}
+
+

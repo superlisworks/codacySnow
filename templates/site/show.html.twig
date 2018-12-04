@@ -9,7 +9,6 @@
         <div class="row">
           <h4>{{ figure.name }}</h4>
           <p class="libre-text mt-50">
-            Fiche :
             <div class="metadata">Ecrit le {{ figure.createAt | date('d/m/Y')}} à {{ figure.createAT | date('H:i')}} dans la catégorie {{ figure.category.title }}</div>
          </div>
          <div class="content">
@@ -18,27 +17,29 @@
           </p>
         </div>
       </div>
+     </div>
+   
 
-
- <div class=" col-md-offset-1 col-md-5 col-sm-12">
+    <div class=" col-md-offset-1 col-md-5 col-sm-12">
         <div class="row center">
           <div class="newsletter">
-            <h4>Commentaires</h4>
-            
-            <form action="#" method="post">
-              <div class="form-group">
-                {{ form_start(Commentform) }}
-                {{ form_row(Commentform.author, {'attr': {'placeholder': "Auteur"}}) }}
-                {{ form_row(Commentform.content, {'attr': {'placeholder': "commentaire"}}) }} 
-                
+    <h4>{{ figure.comments | length }} commentaires :</h4>
+    <form action="#" method="post">
+       <div class="form-group">
+      {% for comment in figure.comments %}
+      {{comment.author}} (<small>{{comment.createAt | date ('d/m/Y à H:i')}})</small>
+      {{comment.content | raw}}<br/>
+        {% endfor %}
+      {{ form_start(commentForm) }}
+      {{ form_row(commentForm.author, {'attr': {'placeholder': "votre nom"}})}}
+      {{ form_row(commentForm.content, {'attr': {'placeholder': "votre commentaire"}})}}
 
-             <i class="fa fa-angle-double-right" aria-hidden="true">Commenter</i></button>
-              {{ form_end(formComment) }}
-
-            </form>
-          </div>
-        </div>
-      </div>
+      <button type="submit" class="btn btn-sucess">Commenter !</button>
+      {{ form_end(commentForm) }}
     </div>
-    </section>
-    {% endblock %}
+    </form>
+  </div>
+  </div>
+</div>
+</section>
+{% endblock %}

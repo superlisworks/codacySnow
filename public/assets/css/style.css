@@ -79,6 +79,7 @@ p{
     color: #777;
     font-size: 15px;
     font-weight: 300;
+    text-align : justify;
 }
 
 .lead{
@@ -391,9 +392,9 @@ a{
 
 .module-subtitle {
     text-transform: none !important;
-    color: #000;
+    color: #777;
     font-family: "Cantarell", "Times New Roman", sans-serif;
-    text-align: center;
+    text-align: justify;
     font-size: 20px;
     margin-bottom: 50px;
 }
@@ -1597,12 +1598,12 @@ footer a:hover {
 .portfolio_item{
 	position: relative;
 	overflow: hidden;
-	margin-bottom: 30px;
+	margin-bottom: 5px;
 	display: inline-block;
 }
 
 .portfolio_item .portfolio_item_hover{
-	cursor: url(../img/read.png), auto;
+	cursor: url(../img/icons8-snowboard-50.png), auto;
 	position: absolute;
 	top:0;
 	left: 0;
@@ -1998,9 +1999,9 @@ footer a:hover {
 		color: #777;
 }
 
-.newsletter{
-		border-left: 1px dashed #e0e0e1;
-    padding-left: 50px;
+.newsletter {
+    border-left: 2px dashed #777;
+    padding-left: 7px;
 }
 
 #submit_btn {
@@ -2346,6 +2347,7 @@ ul.services-list li{
 
 .form-group {
     margin-bottom: 20px !important;
+    text-align: justify;
 }
 
 .detail h3 {
@@ -2442,3 +2444,14 @@ ul.services-list li{
     letter-spacing: 1px;
     font-weight: 300;
 }
+
+.row {
+    margin-right: 2px;
+    margin-left: -8px;
+}
+
+.process-numbers {
+    color: var(--maincolor);
+    opacity: 1.2;
+}
+

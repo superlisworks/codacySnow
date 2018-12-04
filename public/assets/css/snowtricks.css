@@ -42,7 +42,7 @@ footer p {
 
 .process-numbers {
 		color: var(--maincolor);
-		opacity: .2;
+		opacity: 1.2;
 }
 .portfolio_item .portfolio_item_hover .item_info span {
     display: block;
@@ -50,6 +50,10 @@ footer p {
 }
 .portfolio_item .portfolio_item_hover .item_info em {
     background-color: var(--maincolor);
+}
+
+.portfolio_item_hover:hover {
+    cursor: pointer;
 }
 
 /* menu */
