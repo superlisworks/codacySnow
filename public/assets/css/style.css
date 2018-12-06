@@ -58,9 +58,15 @@ body{
 
 /* #####  text  ##### */
 
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h6{
 	color:#000;
 	font-family: 'Cantarell', sans-serif;
+}
+
+h5{
+	color:#777;
+  font-family: 'Cantarell', sans-serif;
+  text-decoration: underline;
 }
 
 a:hover:after {
@@ -1974,7 +1980,7 @@ footer a:hover {
 .contact {
 		background-color: #fff;
     padding: 100px 0 50px 0;
-    color: #000;
+    color: #0874ab;
 }
 
 .contact .bottom-right-separator{

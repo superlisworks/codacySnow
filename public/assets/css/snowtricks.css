@@ -3,6 +3,10 @@
 }
 
 /* header */
+.box-header{
+	z-index:4;
+}
+
 .box-logo img {
     height: 50px;
     background-color: var(--maincolor);
@@ -41,8 +45,8 @@ footer p {
 /* liste des figures */
 
 .process-numbers {
-		color: var(--maincolor);
-		opacity: 1.2;
+    color: var(--maincolor);
+    opacity: 1.2;
 }
 .portfolio_item .portfolio_item_hover .item_info span {
     display: block;
@@ -60,6 +64,7 @@ footer p {
 
 .box-primary-nav {
     background: var(--maincolor);
+    z-index:3;
 }
 .box-primary-nav .box-label {
     color: #00ccff;
@@ -75,9 +80,27 @@ footer p {
     text-shadow: 3px 2px 0 var(--maincolor);
 }
 
+.mouseContainer {
+    display:inline-block; 
+    position: absolute;
+    width: 6rem;
+    height: 6rem;
+    bottom: 65px;
+    background-color:#dcf84f;
+    padding:1.2rem 2rem;
+    border-radius:50%;
+    margin-left: -3rem;
+    z-index:2;
+    cursor:pointer;
+}
+
 .mouse {
-    border: 1px solid white;
+    border: 1px solid #0874ab;
+    position: initial;
+    margin-left:initial;
+
+
 }
 .scroll {
-    background: white;
+    background: #0874ab;
 }

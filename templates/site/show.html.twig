@@ -8,38 +8,48 @@
       <div class="col-md-6 col-sm-12">
         <div class="row">
           <h4>{{ figure.name }}</h4>
-          <p class="libre-text mt-50">
-            <div class="metadata">Ecrit le {{ figure.createAt | date('d/m/Y')}} à {{ figure.createAT | date('H:i')}} dans la catégorie {{ figure.category.title }}</div>
-         </div>
-         <div class="content">
+          <p class="metadata">Ecrit le {{ figure.createAt | date('d/m/Y')}} à {{ figure.createAT | date('H:i')}} dans la catégorie {{ figure.category.title }}
+         </p>
+         <p class="content">
                {{ figure.content | raw }}
-          </div>
           </p>
+          </div>
         </div>
-      </div>
-     </div>
+   
    
 
     <div class=" col-md-offset-1 col-md-5 col-sm-12">
         <div class="row center">
           <div class="newsletter">
     <h4>{{ figure.comments | length }} commentaires :</h4>
-    <form action="#" method="post">
-       <div class="form-group">
+    
       {% for comment in figure.comments %}
       {{comment.author}} (<small>{{comment.createAt | date ('d/m/Y à H:i')}})</small>
       {{comment.content | raw}}<br/>
+      
         {% endfor %}
+        
+        {% if app.user %}
+        
       {{ form_start(commentForm) }}
       {{ form_row(commentForm.author, {'attr': {'placeholder': "votre nom"}})}}
       {{ form_row(commentForm.content, {'attr': {'placeholder': "votre commentaire"}})}}
 
       <button type="submit" class="btn btn-sucess">Commenter !</button>
       {{ form_end(commentForm) }}
-    </div>
-    </form>
+     
+      {% else %}
+      
+      <p>Connectez vous pour commenter :) : 
+            <a href="{{ path('security_login') }}" class="default-btn"> c'est par ici <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+          </p>
+      <p>Pas encore inscrit : 
+            <a href="{{ path('security_registration') }}" class="default-btn"> c'est par ici <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+          </p>
+      {% endif %}
   </div>
   </div>
+      </div>
 </div>
 </section>
 {% endblock %}
