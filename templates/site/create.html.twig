@@ -10,13 +10,16 @@
       <div class="col-md-6 col-sm-12">
         <div class="row">
           <h4> Ajouter des médias</h4>
-          <p class="libre-text mt-50">
+          <div id="mediaList"></div>
+<button onclick="addMedia()">ajouter un média</button>
+<input type="hidden" id="mediaQty" name="mediaQty" value="0">
+          <!--  <p class="libre-text mt-50">
             Images :
             <a href="#" class="default-btn"> c'est par ici <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
           </p>
           <p>Vidéo : 
             <a href="#" class="default-btn"> c'est par ici <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-          </p>
+          </p>-->
         </div>
       </div>
 
@@ -51,3 +54,27 @@
     </div>
     </section>
     {% endblock %}
+    
+   {% block javascripts %}
+   <script>
+   addMedia=function(){
+
+  var newId = document.getElementById("mediaQty").value++;
+
+  document.getElementById("mediaList").innerHTML+=newElementMedia(newId);
+
+}
+
+newElementMedia=function(newId){
+  return `
+  <div>
+    <select id="mediaType${newId}" name="mediaType${newId}">
+      <option value="0" selected="selected">image</option>
+      <option value="1">video</option>
+    </select>
+    <input type="text" id="url${newId}" name="url${newId}" required maxlength="255" size="10">
+  </div>
+  `;
+}
+</script>
+   {% endblock %}
