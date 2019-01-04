@@ -56,6 +56,7 @@ class SiteController extends AbstractController
 
              $form->handleRequest($request); 
              
+            
              if($form->isSubmitted() && $form->isValid()) {
                 if(!$figure->getId()){
                    $figure->setCreateAt(new \DateTime()); 
@@ -63,6 +64,8 @@ class SiteController extends AbstractController
                 
                 $manager->persist($figure);
                 $manager->flush();
+                
+
 
                 return $this->redirectToRoute('site_show', [
                     'id' => $figure->getId()]);

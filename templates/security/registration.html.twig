@@ -3,53 +3,57 @@
 {% block body %}
 
 
-<section id="contact" class="contact mbr-box mbr-section mbr-section--relative mbr-section--bg-adapted">
-    <div class="container">
-      <div class="col-md-6 col-sm-12">
-        <div class="row">
-          <h4> Snow Tricks</h4>
-          <p class="libre-text mt-50">
-            La plus grande communauté des gens qui font du snow et des tricks. Fonctionne aussi pour ceux qui utilisent des skis :)
-          </p>
-          <p>Déja inscrit :) : 
-            <a href="{{ path('security_login') }}" class="default-btn"> c'est par ici <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-          </p>
-        </div>
-      </div>
+<section id="contact"
+	class="contact mbr-box mbr-section mbr-section--relative mbr-section--bg-adapted">
+	<div class="container">
+		<div class="col-md-6 col-sm-12">
+			<div class="row">
+				<h4>Snow Tricks</h4>
+				<p class="libre-text mt-50">La plus grande communauté des gens
+					qui font du snow et des tricks. Fonctionne aussi pour ceux qui
+					utilisent des skis :)</p>
+				<p>
+					Déja inscrit :) : <a href="{{ path('security_login') }}"
+						class="default-btn"> c'est par ici <i
+						class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+				</p>
+			</div>
+		</div>
 
-<!-- login block -->
-      <div class=" col-md-offset-1 col-md-5 col-sm-12">
-        <div class="row center">
-          <div class="newsletter">
-            <h4>Formulaire d'inscription</h4>
-  
-            <form action="{{ path('security_registration') }}" method="post">
-              <div class="form-group">
-              
-                {{ form_start(form) }}
-            {{ form_row(form.username, {'label': 'Nom d\utilisateur', 'attr': 
-            {'placeholder': 'Nom d\utilisateur...'}}) }}
-            {{ form_row(form.email, {'label': 'Adresse email', 'attr': 
+		<!-- login block -->
+		<div class=" col-md-offset-1 col-md-5 col-sm-12">
+			<div class="row center">
+				<div class="newsletter">
+					<h4>Formulaire d'inscription</h4>
+
+					<form action="{{ path('security_registration') }}" method="post">
+						<div class="form-group">
+
+							{{ form_start(form) }}
+							{{ form_row(form.username, {'label': 'Nom d\'utilisateur', 'attr': 
+            {'placeholder': 'Nom d\'utilisateur...'}}) }}
+							{{ form_row(form.email, {'label': 'Adresse email', 'attr': 
             {'placeholder': 'Adresse email...'}}) }}
-            {{ form_row(form.picturePath, {'label': 'Photo', 'attr': 
+							{{ form_row(form.picturePath, {'label': 'Photo', 'attr': 
             {'placeholder': 'photo...'}}) }}
-            {{ form_row(form.password, {'label': 'Mot de passe', 'attr': 
+							{{ form_row(form.password, {'label': 'Mot de passe', 'attr': 
             {'placeholder': 'Mot de passe...'}}) }}
-            {{ form_row(form.confirm_password, {'label': 'Confirmation du mot de passe', 'attr': 
+							{{ form_row(form.confirm_password, {'label': 'Confirmation du mot de passe', 'attr': 
             {'placeholder': 'Comfirmez le mot de passe...'}}) }}
 
-               <a href="{{ path('security_registration') }}" class="default-btn"> Je m'inscris :) <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-              {{ form_end(form) }}
-
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+							<button id="submit_btn" class="default-btn">
+                Je m'inscris <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+              </button>
+							{{ form_end(form) }}
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
 {% endblock %}
 
- 
+
 
 

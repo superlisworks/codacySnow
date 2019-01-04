@@ -52,6 +52,7 @@ class Figure
      */
     private $medias;
 
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -172,4 +173,6 @@ class Figure
 
         return $this;
     }
+
+   
 }
