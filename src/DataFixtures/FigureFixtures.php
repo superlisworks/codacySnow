@@ -28,7 +28,7 @@ class FigureFixtures extends Fixture
             for ($j = 1; $j <= mt_rand(4, 6); $j ++) {
                 $figure = new Figure();
 
-                $content = '<p>' . join($faker->paragraphs(5), '</p><p>') . '</p>';
+                $content =  join($faker->paragraphs(5), '<br/>');
 
                 $figure->setName($faker->sentence())
                     ->setContent($content)
@@ -41,7 +41,8 @@ class FigureFixtures extends Fixture
                 for ($k = 1; $k <= mt_rand(4, 10); $k ++) {
                     $comment = new Comment();
 
-                    $content = '<p>' . join($faker->paragraphs(2), '</p><p>') . '</p>';
+                    //$content = '<p>' . join($faker->paragraphs(2), '</p><p>') . '</p>';
+                    $content =  join($faker->paragraphs(2), '<br/>');
 
                     $days = (new \DateTime())->diff($figure->getCreateAt())->days;
 

@@ -24,8 +24,8 @@
     <h4>{{ figure.comments | length }} commentaires :</h4>
     
       {% for comment in figure.comments %}
-      {{comment.author}} (<small>{{comment.createAt | date ('d/m/Y à H:i')}})</small>
-      {{comment.content | raw}}<br/>
+      {{comment.author}} <small>({{comment.createAt | date ('d/m/Y à H:i')}})</small>
+      <p>{{comment.content | raw}}</p><br/>
       
         {% endfor %}
         
