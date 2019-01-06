@@ -7,9 +7,11 @@
     <div class="container">
       <div class="col-md-6 col-sm-12">
         <div class="row">
+  
+       
           <h4>{{ figure.name }}</h4>
           <p class="metadata">Ecrit le {{ figure.createAt | date('d/m/Y')}} à {{ figure.createAT | date('H:i')}} dans la catégorie {{ figure.category.title }}
-         par <img src="{{ figure.author.picturePath }}" class="avatar avatar-medium" alt="Avatar de {{ figure.author.username }}" {{ app.user.username }}</p>
+         par <img src="{{ figure.author.picturePath }}" class="avatar avatar-medium" alt="Avatar de </p>
           
          <p class="content">
                {{ figure.content | raw }}
@@ -35,7 +37,7 @@
       {{ form_start(commentForm) }}
       {{ form_row(commentForm.author, {'label': 'Nom', 'attr': {'placeholder': "votre nom"}})}}
       {{ form_row(commentForm.content, {'label': 'Commentaire','attr': {'placeholder': "votre commentaire"}})}}
-
+    
       <button type="submit" class="btn btn-sucess">Commenter !</button>
       {{ form_end(commentForm) }}
      
@@ -53,4 +55,5 @@
       </div>
 </div>
 </section>
+
 {% endblock %}

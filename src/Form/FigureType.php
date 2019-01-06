@@ -28,11 +28,11 @@ class FigureType extends AbstractType
                 'media',
                 CollectionType::class,
                 [
-                    'entry_type' => MediaType::class
+                    'entry_type' => MediaType::class,
+                    'allow_add'  => true
                 ]
             )
-        ;
-         
+        ;    
     }
 
     public function configureOptions(OptionsResolver $resolver)

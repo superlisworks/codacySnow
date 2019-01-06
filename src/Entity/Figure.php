@@ -49,10 +49,6 @@ class Figure
      */
     private $comments;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Media", mappedBy="figure", orphanRemoval=true)
-     */
-    private $medias;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="figures")
@@ -60,11 +56,22 @@ class Figure
      */
     private $author;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Media", mappedBy="figure", orphanRemoval=true)
+     */
+    private $media;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $coverImage;
+
 
     public function __construct()
     {
         $this->comments = new ArrayCollection();
-        $this->medias = new ArrayCollection();
+        $this->media = new ArrayCollection();
+     
     }
 
     public function getId(): ?int
@@ -151,36 +158,6 @@ class Figure
         return $this;
     }
 
-    /**
-     * @return Collection|Media[]
-     */
-    public function getMedias(): Collection
-    {
-        return $this->medias;
-    }
-
-    public function addMedia(Media $media): self
-    {
-        if (!$this->medias->contains($media)) {
-             $this->medias[] = $media;
-            $media->setFigure($this);
-        }
-
-        return $this;
-    }
-
-    public function removeMedia(Media $media): self
-    {
-        if ($this->medias->contains($media)) {
-            $this->medias->removeElement($media);
-            // set the owning side to null (unless already changed)
-            if ($media->getFigure() === $this) {
-                $media->setFigure(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function getAuthor(): ?User
     {
@@ -190,6 +167,49 @@ class Figure
     public function setAuthor(?User $author): self
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Media[]
+     */
+    public function getMedia(): Collection
+    {
+        return $this->media;
+    }
+
+    public function addMedia(Media $media): self
+    {
+        if (!$this->media->contains($media)) {
+            $this->media[] = $media;
+            $media->setFigure($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMedia(Media $media): self
+    {
+        if ($this->media->contains($media)) {
+            $this->media->removeElement($media);
+            // set the owning side to null (unless already changed)
+            if ($media->getFigure() === $this) {
+                $media->setFigure(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getCoverImage(): ?string
+    {
+        return $this->coverImage;
+    }
+
+    public function setCoverImage(string $coverImage): self
+    {
+        $this->coverImage = $coverImage;
 
         return $this;
     }

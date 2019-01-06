@@ -27,10 +27,11 @@ class Media
     private $type;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Figure", inversedBy="medias")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Figure", inversedBy="media")
      * @ORM\JoinColumn(nullable=false)
      */
     private $figure;
+
 
     public function getId(): ?int
     {
@@ -72,4 +73,6 @@ class Media
 
         return $this;
     }
+
+  
 }

@@ -53,12 +53,12 @@ class SiteController extends AbstractController
                 $figure = new Figure();
             }
             
-            //$media = new Media();
+            $media = new Media();
             
-            //$media->setTitle('Http://placehold.it/400x200')
-               //   ->setType(1);
+            $media->setTitle('Http://placehold.it/400x200')
+                  ->setType(1);
                   
-           // $figure->addMedia($media);   
+            $figure->addMedia($media);   
 
             $form = $this->createForm(FigureType::class, $figure);
 

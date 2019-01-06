@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
 
-
 {% block body %}
 
 
@@ -9,20 +8,18 @@
     <div class="container">
       <div class="col-md-6 col-sm-12">
         <div class="row">
-          <h4> Ajouter des médias</h4>
+          <h4> Médias</h4>
           <div id="mediaList"></div>
-<button onclick="addMedia()">ajouter un média</button>
-<input type="hidden" id="mediaQty" name="mediaQty" value="0">
-          <!--  <p class="libre-text mt-50">
-            Images :
-            <a href="#" class="default-btn"> c'est par ici <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-          </p>
-          <p>Vidéo : 
-            <a href="#" class="default-btn"> c'est par ici <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-          </p>-->
+          <form action="#" method="post">
+              <div class="form-group">
+          {{ form_row(formFigure.media,{'label': 'Ajouter des médias ici !','attr':{'placeholder': "Ajouterdes médias"}}) }}
+    
+          <button type="submit" id="add-media" class="default-btn">Ajouter une image<i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+          
+          </form>
         </div>
       </div>
-
+  </div>
 
  <div class=" col-md-offset-1 col-md-5 col-sm-12">
         <div class="row center">
@@ -58,8 +55,9 @@
     </section>
     {% endblock %}
     
+    
    {% block javascripts %}
-   <script>
+  <script>
    addMedia=function(){
 
   var newId = document.getElementById("mediaQty").value++;
@@ -80,4 +78,5 @@ newElementMedia=function(newId){
   `;
 }
 </script>
+  
    {% endblock %}

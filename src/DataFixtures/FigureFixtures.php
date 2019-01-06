@@ -8,6 +8,8 @@ use App\Entity\Category;
 use App\Entity\Comment;
 use App\Entity\User;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
+use App\Entity\Media;
 
 class FigureFixtures extends Fixture
 {
@@ -68,10 +70,21 @@ class FigureFixtures extends Fixture
                 $content =  join($faker->paragraphs(5), '<br/>');
 
                 $figure->setName($faker->sentence())
+                       ->setCoverImage($faker->imageUrl(1000,350))
                        ->setContent($content)
                        ->setCreateAt($faker->dateTimeBetween('-6 months'))
                        ->setCategory($category)
                        ->setAuthor($user);
+                
+                       for($l = 1; $l <= mt_rand(2, 5); $l++) {
+                           $media = new Media();
+                           
+                           $media->setTitle($faker->imageUrl())
+                                 ->setType(1)
+                                 ->setFigure($figure);
+                                 
+                           $manager->persist($media);    
+                       }
                 
                        $user = $users[mt_rand(0, count($users) -1)];
 
@@ -81,7 +94,7 @@ class FigureFixtures extends Fixture
                 for ($k = 1; $k <= mt_rand(4, 10); $k ++) {
                     $comment = new Comment();
 
-                    //$content = '<p>' . join($faker->paragraphs(2), '</p><p>') . '</p>';
+                    
                     $content =  join($faker->paragraphs(2), '<br/>');
 
                     $days = (new \DateTime())->diff($figure->getCreateAt())->days;

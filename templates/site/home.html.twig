@@ -21,6 +21,8 @@ On peut retrouver les prémices du snowboard chez les Mongols au xviiie siècle,
         </div>
         
         <!-- categories  -->
+   
+        
     <div class="col-md-3" id="bas">
           <div class="row categories-grid">
            L'équipement se compose d'une planche de snowboard (board en anglais signifie « planche » et snow signifie « neige »), d'une paire de fixations (il en existe plusieurs types) et d'une paire de bottes adaptées (désignées par l'anglicisme boots). La position sur la planche est proche de celle du skateur : de profil, les pieds posés sur une ligne en travers de la planche, l'un derrière l'autre.
@@ -30,7 +32,7 @@ On peut retrouver les prémices du snowboard chez les Mongols au xviiie siècle,
         {% for figure in figures %}
           <div class="col-md-6 photography" onclick="window.location=' {{ path('site_show' , {'id': figure.id}) }}'">
               <a class="portfolio_item work-grid">
-                <img src="/assets/img/figure5small.jpg" alt="image">
+                <img src="{{ figure.coverImage }}" alt="image" style="height: 200px; width:100%; display:block">
                 <div class="portfolio_item_hover">
                   <div class="item_info">
                     <span>{{ figure.name }}</span>
