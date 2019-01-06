@@ -21,6 +21,8 @@ class FigureType extends AbstractType
             ])
             ->add('content')
         ;
+        
+        
     }
 
     public function configureOptions(OptionsResolver $resolver)

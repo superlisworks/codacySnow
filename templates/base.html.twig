@@ -42,6 +42,7 @@
           </a>
           <!-- box-primary-nav-trigger -->
         </div>
+     
         <!-- end box header -->
         <!-- nav -->
         <nav>
@@ -52,6 +53,9 @@
             <li><a href="{{ path('security_login') }}">Connexion</a></li>
             <li><a href="{{ path('security_registration') }}">S'inscrire</a></li>
             {% else %}
+           
+            <li><a href="#" class="nav-link dropdown-toggle" id="userDropdowLink">
+            <img src="{{ app.user.picturePath }}" classe="avatar avatar-mini" alt="Avatar de {{ app.user.username }}">{{ app.user.username }}</a>
             <li><a href="{{ path('site_create') }}">Créer une figure</a></li>
             <li><a href="{{ path('security_logout') }}">Déconnexion</a></li>
             {% endif %}
