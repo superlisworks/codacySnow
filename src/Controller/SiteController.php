@@ -14,6 +14,7 @@ use App\Repository\FigureRepository;
 use App\Form\FigureType;
 use App\Entity\Comment;
 use App\Form\CommentType;
+use App\Entity\Media;
 
 class SiteController extends AbstractController
 {
@@ -51,6 +52,13 @@ class SiteController extends AbstractController
             if(!$figure) {
                 $figure = new Figure();
             }
+            
+            //$media = new Media();
+            
+            //$media->setTitle('Http://placehold.it/400x200')
+               //   ->setType(1);
+                  
+           // $figure->addMedia($media);   
 
             $form = $this->createForm(FigureType::class, $figure);
 
