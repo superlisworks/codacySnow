@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -44,7 +46,7 @@ class User implements UserInterface {
     private $picturePath;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer",nullable = true)
      */
     private $role;
 
@@ -57,6 +59,16 @@ class User implements UserInterface {
     * @Assert\EqualTo(propertyPath="password")
     */
     public $confirm_password;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Figure", mappedBy="author")
+     */
+    private $figures;
+
+    public function __construct()
+    {
+        $this->figures = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -141,6 +153,37 @@ class User implements UserInterface {
 
     public function getRoles() {
         return ['ROLE_USER'];
+    }
+
+    /**
+     * @return Collection|Figure[]
+     */
+    public function getFigures(): Collection
+    {
+        return $this->figures;
+    }
+
+    public function addFigure(Figure $figure): self
+    {
+        if (!$this->figures->contains($figure)) {
+            $this->figures[] = $figure;
+            $figure->setAuthor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFigure(Figure $figure): self
+    {
+        if ($this->figures->contains($figure)) {
+            $this->figures->removeElement($figure);
+            // set the owning side to null (unless already changed)
+            if ($figure->getAuthor() === $this) {
+                $figure->setAuthor(null);
+            }
+        }
+
+        return $this;
     }
 
     }

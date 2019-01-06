@@ -25,6 +25,10 @@
 			<div class="row center">
 				<div class="newsletter">
 					<h4>Connexion</h4>
+					
+					{% if hasError %}
+					  <div class="alert alert-danger">Le nom d'utilisateur ou le mot de passe est invalide</div>
+					{%  endif %}
 
 					<form action="{{ path('security_login') }}" method="post">
 						<div class="form-group">

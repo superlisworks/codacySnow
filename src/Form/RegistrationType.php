@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 
 class RegistrationType extends AbstractType
 {
@@ -17,7 +18,7 @@ class RegistrationType extends AbstractType
             ->add('email')
             ->add('username')
             ->add('password', PasswordType::class)
-            ->add('picturePath')
+            ->add('picturePath', UrlType::class)
             ->add('confirm_password', PasswordType::class)
         ;
     }

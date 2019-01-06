@@ -78,8 +78,8 @@ class Category
     public function addFigure(Figure $figure): self
     {
         if (!$this->figures->contains($figure)) {
-            $this->figures[] = $figure;
-            $figure->setCategory($this);
+             $this->figures[] = $figure;
+           $figure->setCategory($this);
         }
 
         return $this;
