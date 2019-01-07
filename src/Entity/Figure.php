@@ -173,6 +173,7 @@ class Figure
 
     /**
      * @return Collection|Media[]
+     * @Assert\Valid()
      */
     public function getMedia(): Collection
     {
