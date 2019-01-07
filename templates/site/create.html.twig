@@ -3,80 +3,192 @@
 
 {% block body %}
 
-
 <section id="contact" class="contact mbr-box mbr-section mbr-section--relative mbr-section--bg-adapted">
     <div class="container">
       <div class="col-md-6 col-sm-12">
         <div class="row">
-          <h4> Médias</h4>
-          <div id="mediaList"></div>
-          <form action="#" method="post">
-              <div class="form-group">
-          {{ form_row(formFigure.media,{'label': 'Ajouter des médias ici !','attr':{'placeholder': "Ajouterdes médias"}}) }}
-          
-          <button type="submit" id="add-media" class="default-btn">Ajouter une image<i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
-          
-          </form>
+          <h4>Ajouter un média</h4>
+            <div id="mediaList"></div>
+            <button onclick="sendMediaToServer()">ajouter un média</button>
+            <div id="addMediaErrorMSG"></div>
         </div>
       </div>
-  </div>
 
- <div class=" col-md-offset-1 col-md-5 col-sm-12">
+  
+      <div class=" col-md-offset-1 col-md-5 col-sm-12">
         <div class="row center">
           <div class="newsletter">
-          {% if editMode %}
+            {% if editMode %}
             <h4>Modification d'une figure</h4>
             {% else %}
-             <h4>Création d'une figure</h4>
-             {% endif %}
+            <h4>Création d'une figure</h4>
+            {% endif %}
             <form action="#" method="post">
               <div class="form-group">
-              
                 {{ form_start(formFigure) }}
                 {{ form_row(formFigure.name, {'label': 'Nom de la figure','attr': {'placeholder': "Nom de la figure"}}) }}
                 {{ form_row(formFigure.category, {'label': 'Catégorie de la figure'}) }}
                 {{ form_row(formFigure.content, {'label': 'Description de la figure','attr':{'placeholder': "Description de la figure"}}) }} 
-                
-
-              <button id="submit_btn" class="default-btn"> 
-              {% if editMode %}
-               Enregistrer les modifications
-               {% else %}
-               Ajouter la figure
-               {% endif %}
-               <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
-              {{ form_end(formFigure) }}
-
+                <button id="submit_btn" class="default-btn"> 
+                {% if editMode %}
+                Enregistrer les modifications
+                {% else %}
+                Ajouter la figure
+                {% endif %}
+                <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+                {{ form_end(formFigure) }}
             </form>
           </div>
         </div>
       </div>
     </div>
-    </section>
-    {% endblock %}
+  </section>         
+            
+{% endblock %}
     
    
    {% block javascripts %}
   <script>
-   addMedia=function(){
+  addMediaSucceed = function(response){
+	  response = JSON.parse(response);
+	  if(response.succeed){
+	    response = response.data;
+	    var html;
+	    var idMedia = mediaQty-1;
+	    if ( idFigure == -1) idFigure = response.idFigure;
+	    switch ( medias[idMedia].type ) {
+	      case 0:
+	        html = `<div class="mediaImg" style="background-image:url(${medias[idMedia].src})"></div>`;
+	        break;
+	      case 1:
+	        html = medias[idMedia].src;
+	        break;
+	    }
+	    html += `<i class="fas fa fa-trash" onclick="removeMediaFromServer(${response.id}, ${idMedia})"></i>`;
+	    document.getElementById("media"+idMedia).innerHTML=html;
+	    addMediaToList();
+	  }
+	  else console.log(response.data);
+	}
 
-  var newId = document.getElementById("mediaQty").value++;
+	addMediaToList = function(){
+	  medias[mediaQty] = {
+	    "type" : 1  // 0: image 1:vidéo
+	  } 
+	  document.getElementById("mediaList").innerHTML+=newElementMedia(mediaQty++);
+	}
 
-  document.getElementById("mediaList").innerHTML+=newElementMedia(newId);
+	changeSwtich = function(idMedia){
+	  medias[idMedia].type = (medias[idMedia].type == 1 ? 0 : 1);
+	}
 
-}
+	createCORSRequest = function(method, url) {
+	  var xhr = new XMLHttpRequest();
+	  if ("withCredentials" in xhr) {
+	    xhr.open(method, url, true);
+	  } else if (typeof XDomainRequest != "undefined") {
+	    // XDomainRequest for IE.
+	    xhr = new XDomainRequest();
+	    xhr.open(method, url);
+	  } else {
+	    // CORS not supported.
+	    xhr = null;
+	  }
+	  return xhr;
+	}
 
-newElementMedia=function(newId){
-  return `
-  <div>
-    <select id="mediaType${newId}" name="mediaType${newId}">
-      <option value="0" selected="selected">image</option>
-      <option value="1">video</option>
-    </select>
-    <input type="text" id="url${newId}" name="url${newId}" required maxlength="255" size="10">
-  </div>
-  `;
-}
+
+	makeCorsRequest = function (url,method,data,succeed) {
+	  // var url = 'http://html5rocks-cors.s3-website-us-east-1.amazonaws.com/index.html';
+
+	  var xhr = createCORSRequest(method, url);
+	  if (!xhr) {
+	    alert('CORS not supported');
+	    return;
+	  }
+
+	  // xhr.setRequestHeader("Content-Type", "application/json");
+
+	  // Response handlers.
+	  xhr.onload = function() {
+	    succeed(xhr.responseText);
+	  };
+
+	  xhr.onerror = function() {
+	    alert('Woops, there was an error making the request.');
+	  };
+
+	  xhr.send(data);
+	}
+
+	newElementMedia = function(newId){
+	  return `
+	  <div class="addMedia" id="media${newId}" >
+	    <input type="text" id="url${newId}" name="url" required maxlength="255" size="10">
+	    <div class="flipswitch">
+	      <input type="checkbox" name="flipswitch" class="flipswitch-cb" id="fs" onclick="changeSwtich(${newId})" checked>
+	      <label class="flipswitch-label" for="fs">
+	          <div class="flipswitch-inner"></div>
+	          <div class="flipswitch-switch"></div>
+	      </label>
+	    </div>
+	  </div>
+	  `;
+	}
+
+	removeMediaFromServer = function(idMedia, idInMediaList){
+	  deleting = idInMediaList;
+	  //request
+	  makeCorsRequest(
+	    'http://opcsnowm.42tea.io/media.php?action=remove',
+	    "POST",
+	    JSON.stringify({
+	      "id": idMedia
+	    }),
+	    removeMediaSucceed
+	  )
+	}
+
+	removeMediaSucceed = function(responseText){
+	  console.log(responseText);
+	  result = JSON.parse(responseText);
+	  if(result.succeed) {
+	    var cible = document.getElementById("media"+deleting);
+	    cible.innerHTML="";
+	    cible.className="";
+	  }
+	  else console.log(result.data);
+	}
+
+	sendMediaToServer = function(){
+	  var idMedia = mediaQty-1;
+
+	  //check input validity & error message
+	  if (document.getElementById(`url${idMedia}`).value == "") {
+	    document.getElementById("addMediaErrorMSG").innerHTML = "vous n'avez pas rempli le champs";
+	    return false;
+	  }
+	  document.getElementById("addMediaErrorMSG").innerHTML = "";
+	  medias[idMedia].src = document.getElementById(`url${idMedia}`).value;
+	  
+	  //request
+	  makeCorsRequest(
+	    'http://opcsnowm.42tea.io/media.php?action=add',
+	    "POST",
+	    JSON.stringify({
+	      "idFigure": idFigure,
+	      "type"    : medias[idMedia].type,
+	      "src"     : medias[idMedia].src
+	    }),
+	    addMediaSucceed
+	  )
+	}
+
+	deleting = -1;
+	mediaQty = 0;
+	medias   = [];
+	idFigure = -1
+	addMediaToList();
 </script>
   
    {% endblock %}

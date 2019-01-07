@@ -16,6 +16,9 @@
          <p class="content">
                {{ figure.content | raw }}
           </p>
+          {% if app.user and app.user == figure.author %}
+          <a href="{{ path('site_edit', {'id': figure.name}) }}" class="btn btn-secondary">Modifier la figure</a>
+          {% endif %}
           </div>
         </div>
    

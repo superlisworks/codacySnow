@@ -100,7 +100,7 @@
     margin-right:2rem;
     width:50%;
   }
-  .addMedia .fas{
+  .addMedia .fa{
     margin-left:2rem;
     color:red;
     margin-top: .4rem;
@@ -108,9 +108,9 @@
   }
 
   .mediaImg {
-    width: 16rem;
-    height: 9rem;
-    background-size: contain;
+    width: 32rem;
+    height: 18rem;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position-y: center;
     border: 1px solid #ececec;

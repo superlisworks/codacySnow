@@ -9,6 +9,8 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use App\Entity\Figure;
 use App\Repository\FigureRepository;
 use App\Form\FigureType;
@@ -41,10 +43,11 @@ class SiteController extends AbstractController
 
         ]);
     }
+     
     
     /**
      * @Route("/new", name="site_create")
-     * @Route("/new/{id}/edit", name="site_edit")
+     * @Route("/{id}/edit", name="site_edit")
      */
 
     public function form(Figure $figure = null, Request $request, ObjectManager $manager) {
@@ -53,12 +56,12 @@ class SiteController extends AbstractController
                 $figure = new Figure();
             }
             
-            $media = new Media();
+            //$media = new Media();
             
-            $media->setTitle('Http://placehold.it/400x200')
-                  ->setType(1);
+           // $media->setTitle('Http://placehold.it/400x200')
+                //  ->setType(1);
                   
-            $figure->addMedia($media);   
+           // $figure->addMedia($media);   
 
             $form = $this->createForm(FigureType::class, $figure);
 
