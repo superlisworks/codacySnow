@@ -16,11 +16,7 @@ class MediaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title',UrlType::class, [
-                'attr' => [
-                    'placeholder' => "Url de l'image"
-                ]
-            ])
+            ->add('title')
             ->add('type');
     }
 
