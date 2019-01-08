@@ -18,6 +18,7 @@
           </p>
           {% if app.user and app.user == figure.author %}
           <a href="{{ path('site_edit', {'id': figure.name}) }}" class="btn btn-secondary">Modifier la figure</a>
+          <a href="{{ path('figure_delete', {'id': figure.name}) }}" class="btn btn-danger" onclick="return confirm`êtes vous sur de vouloir supprimer la figure: {{ figure.name }} ?`)>Supprimer la figure</a>
           {% endif %}
           </div>
         </div>

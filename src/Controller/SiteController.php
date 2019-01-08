@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Component\HttpFoundation\Response;
 use App\Entity\Figure;
 use App\Repository\FigureRepository;
 use App\Form\FigureType;
@@ -116,6 +117,22 @@ class SiteController extends AbstractController
         ]);
     }
 
+    /**
+     * Delete a figure
+     * 
+     * @Route("/site/{id}/delete", name="site_delete")
+     * @Security("is_granted('Role_USER') and user == figure.getAuthor()")
+     * 
+     * @param Figure $figure
+     * @param ObjectManager $manager
+     * @return Response
+     */
     
+    public function delete(Figure $figure, ObjectManager $manager) {
+        $manager->remove($figure);
+        $manager->flush();
+        
+        return $this->redictToRoute("home");
+    }
 }
  
