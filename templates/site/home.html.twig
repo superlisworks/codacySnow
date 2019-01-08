@@ -32,7 +32,7 @@ On peut retrouver les prémices du snowboard chez les Mongols au xviiie siècle,
                 <div class="portfolio_item_hover">
                   <div class="item_info">
                     <span>{{ figure.name }}</span>
-                    {% if app.user %}
+                    {% if app.user and app.user == figure.author %}
                     <em onclick="window.location='{{ path('site_edit' , {'id': figure.id}) }}'; event.stopPropagation();"><i class="fa fa-pencil"></i></em>
                     <em onclick="window.location='{{ path('site_edit' , {'id': figure.id}) }}'; event.stopPropagation();"><i class="fa fa-trash"></i></em> 
                     {% endif %}

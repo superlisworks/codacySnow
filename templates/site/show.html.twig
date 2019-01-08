@@ -7,21 +7,21 @@
     <div class="container">
       <div class="col-md-6 col-sm-12">
         <div class="row">
-  
-       
           <h4>{{ figure.name }}</h4>
           <p class="metadata">Ecrit le {{ figure.createAt | date('d/m/Y')}} à {{ figure.createAT | date('H:i')}} dans la catégorie {{ figure.category.title }}
          par <img src="{{ figure.author.picturePath }}" class="avatar avatar-medium" alt="Avatar de </p>
-          
+           
          <p class="content">
+         
                {{ figure.content | raw }}
           </p>
           {% if app.user and app.user == figure.author %}
           <a href="{{ path('site_edit', {'id': figure.name}) }}" class="btn btn-secondary">Modifier la figure</a>
-          <a href="{{ path('figure_delete', {'id': figure.name}) }}" class="btn btn-danger" onclick="return confirm`êtes vous sur de vouloir supprimer la figure: {{ figure.name }} ?`)>Supprimer la figure</a>
+         
           {% endif %}
           </div>
         </div>
+      
    
    
 
